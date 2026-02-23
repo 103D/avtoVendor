@@ -1,0 +1,2719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office" />
+  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+    <WindowTopX>0</WindowTopX>
+    <WindowTopY>0</WindowTopY>
+    <ProtectStructure>False</ProtectStructure>
+    <ProtectWindows>False</ProtectWindows>
+  </ExcelWorkbook>
+  <Styles>
+    <Style ss:ID="s0">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="14" ss:Bold="1" ss:Color="#000000" />
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s1">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="9" ss:Color="#000000" />
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s2">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="9" ss:Bold="1" ss:Color="#000000" />
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s3">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="9" ss:Bold="1" ss:Color="#000000" />
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s4">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+      <Font ss:FontName="Arial" x:CharSet="1" ss:Size="8" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s5">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="9" ss:Bold="1" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s6">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="8" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s7">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial Narrow" x:CharSet="204" ss:Size="8.25" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s8">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="8" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s9">
+      <Alignment ss:Horizontal="Right" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="8" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat ss:Format="#,##0.000" />
+    </Style>
+    <Style ss:ID="s10">
+      <Alignment ss:Horizontal="Right" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="8" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat ss:Format="#,##0.00" />
+    </Style>
+    <Style ss:ID="s11">
+      <Alignment ss:Horizontal="Right" ss:Vertical="Center" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="8" ss:Bold="1" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s12">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="8" ss:Bold="1" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat ss:Format="#,##0.000" />
+    </Style>
+    <Style ss:ID="s13">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="8" ss:Bold="1" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s14">
+      <Alignment ss:Horizontal="Right" ss:Vertical="Center" ss:WrapText="1" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="8" ss:Bold="1" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat ss:Format="#,##0.00" />
+    </Style>
+    <Style ss:ID="s15">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+      <Font ss:FontName="Arial" x:CharSet="1" ss:Size="8" ss:Color="#000000" />
+      <Borders>
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s16">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="9" ss:Color="#000000" />
+      <Interior />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s17">
+      <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:Rotate="0" />
+      <Font ss:FontName="Arial" x:CharSet="204" ss:Size="9" ss:Color="#000000" />
+      <Interior />
+      <NumberFormat />
+    </Style>
+  </Styles>
+  <Worksheet ss:Name="Приходная накладная">
+    <Table ss:ExpandedColumnCount="21" ss:ExpandedRowCount="85" x:FullColumns="1" x:FullRows="1">
+      <Column ss:AutoFitWidth="0" ss:Width="5.388" />
+      <Column ss:AutoFitWidth="0" ss:Width="20.879" />
+      <Column ss:AutoFitWidth="0" ss:Width="21.552" />
+      <Column ss:AutoFitWidth="0" ss:Width="15.491" />
+      <Column ss:AutoFitWidth="0" ss:Width="84.862" />
+      <Column ss:AutoFitWidth="0" ss:Width="47.819" />
+      <Column ss:AutoFitWidth="0" ss:Width="32.328" />
+      <Column ss:AutoFitWidth="0" ss:Width="26.267" />
+      <Column ss:AutoFitWidth="0" ss:Width="10.776" />
+      <Column ss:AutoFitWidth="0" ss:Width="5.388" />
+      <Column ss:AutoFitWidth="0" ss:Width="4.715" />
+      <Column ss:AutoFitWidth="0" ss:Width="21.552" />
+      <Column ss:AutoFitWidth="0" ss:Width="10.776" />
+      <Column ss:AutoFitWidth="0" ss:Width="31.655" />
+      <Column ss:AutoFitWidth="0" ss:Width="10.776" />
+      <Column ss:AutoFitWidth="0" ss:Width="5.388" />
+      <Column ss:AutoFitWidth="0" ss:Width="47.145" />
+      <Column ss:AutoFitWidth="0" ss:Width="47.819" />
+      <Column ss:AutoFitWidth="0" ss:Width="42.431" />
+      <Column ss:AutoFitWidth="0" ss:Width="5.388" />
+      <Column ss:AutoFitWidth="0" ss:Width="5.388" />
+      <Row ss:AutoFitHeight="0" ss:Height="5.898" />
+      <Row ss:AutoFitHeight="0" ss:Height="40.550">
+        <Cell ss:Index="2" ss:StyleID="s0" ss:MergeAcross="17">
+          <Data ss:Type="String">Накладная № 1901 от 8 февраля 2026 г.</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796" />
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="2" ss:StyleID="s1" ss:MergeAcross="2">
+          <Data ss:Type="String">Поставщик:</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s2" ss:MergeAcross="4">
+          <Data ss:Type="String">Завод Алмата: Алмата Морозилка Торт&#10;</Data>
+        </Cell>
+        <Cell ss:Index="11" ss:StyleID="s1" ss:MergeAcross="2">
+          <Data ss:Type="String">Склад:</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s3" ss:MergeAcross="6">
+          <Data ss:Type="String">Лассио Магазин&#10;</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="5.898" />
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="2" ss:StyleID="s1" ss:MergeAcross="2">
+          <Data ss:Type="String">Покупатель:</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s2" ss:MergeAcross="4">
+          <Data ss:Type="String">SAFIA KZ</Data>
+        </Cell>
+        <Cell ss:Index="11" ss:StyleID="s1" ss:MergeAcross="3">
+          <Data ss:Type="String">Подразделение:</Data>
+        </Cell>
+        <Cell ss:Index="16" ss:StyleID="s3" ss:MergeAcross="4">
+          <Data ss:Type="String">S ALM Лассио&#10;&#10;</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="5.898" />
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="2" ss:StyleID="s1" ss:MergeAcross="2">
+          <Data ss:Type="String">Сотрудник:</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s2" ss:MergeAcross="4">
+          <Data ss:Type="String">,&#10;</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:StyleID="s4" />
+        <Cell ss:Index="2" ss:StyleID="s4" />
+        <Cell ss:Index="3" ss:StyleID="s4" />
+        <Cell ss:Index="4" ss:StyleID="s4" />
+        <Cell ss:Index="5" ss:StyleID="s4" />
+        <Cell ss:Index="6" ss:StyleID="s4" />
+        <Cell ss:Index="7" ss:StyleID="s4" />
+        <Cell ss:Index="8" ss:StyleID="s4" />
+        <Cell ss:Index="9" ss:StyleID="s4" />
+        <Cell ss:Index="10" ss:StyleID="s4" />
+        <Cell ss:Index="11" ss:StyleID="s4" />
+        <Cell ss:Index="12" ss:StyleID="s4" />
+        <Cell ss:Index="13" ss:StyleID="s4" />
+        <Cell ss:Index="14" ss:StyleID="s4" />
+        <Cell ss:Index="15" ss:StyleID="s4" />
+        <Cell ss:Index="16" ss:StyleID="s4" />
+        <Cell ss:Index="17" ss:StyleID="s4" />
+        <Cell ss:Index="18" ss:StyleID="s4" />
+        <Cell ss:Index="19" ss:StyleID="s4" />
+        <Cell ss:Index="20" ss:StyleID="s4" />
+        <Cell ss:Index="21" ss:StyleID="s4" />
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="23.593">
+        <Cell ss:Index="1" ss:StyleID="s5" ss:MergeAcross="1">
+          <Data ss:Type="String">№</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s5" ss:MergeAcross="2">
+          <Data ss:Type="String">Товар</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s5" ss:MergeAcross="1">
+          <Data ss:Type="String">Мест</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s5" ss:MergeAcross="5">
+          <Data ss:Type="String">Количество</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s5" ss:MergeAcross="2">
+          <Data ss:Type="String">Цена с НДС, тенге</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s5">
+          <Data ss:Type="String">Ставка НДС(%)</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s5">
+          <Data ss:Type="String">Сумма НДС, тенге</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s5" ss:MergeAcross="2">
+          <Data ss:Type="String">Сумма с НДС, тенге</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">1</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002247</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Баунти сет Б</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">2</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001683</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Турецкая пахлава мини сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">3</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002249</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Бисконти сет Б</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">4</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001694</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Кета печенье Сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">5</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002256</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Лимон сет Б</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">6</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002285</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Печенье «Нутелла»</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="16.220">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">7</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001664</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Рогалики со сгушенкой Сет 0,5</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">8</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001873</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Имбирный пряник Принцесса</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">9</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002250</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Лочира сет Б</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">4</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">4</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">10</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001170</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Маршмеллоу Радуга</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">11</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002283</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Мишка БАРНИ кекс</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">12</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002243</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Апельсиновый кекс new</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="16.220">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">13</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000126</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Бакинская пахлава прямоугольный</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">14</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002152</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Имбирный пряник Барселона</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">15</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002282</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Классический бисконти</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">3</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">3</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">16</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002257</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Кунжут сет Б</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">17</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002291</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Лочира мини сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">18</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001660</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Рогалики с вишней Сет 0,2</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">19</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001654</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Курабье печенье Сет 0,25</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">20</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000779</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Леденцы с игрушками</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="15.483">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">21</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001663</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Рогалики со сгушенкой Сет 0,2</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">22</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002252</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Мезуми сет Б 200 гр</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">23</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002255</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Шрек сет Б</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">24</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000563</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Яблочный джем</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">25</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002281</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Баунти мини печенье сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">26</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002150</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Имбирный пряник Куроми</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">27</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002287</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Печенья "Браун"</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">28</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001656</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Ракушки печенье Сет 0,5</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">29</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000551</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Чупа-попс- 9000</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">30</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000778</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Леденцы</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">10</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">10</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">31</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002288</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Мармелад сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">32</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001637</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Орешек</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="15.483">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">33</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001054</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Рисовые хлебцы мини сет (200гр)</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="16.220">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">34</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002151</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Имбирный пряник Реал Мадрид</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">35</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001644</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Малиновый конфитюр</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">36</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000473</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Мишка пирог</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">37</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002286</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Овсянка мини печенье сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="16.220">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">38</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002301</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Хлеб Славянский аромат мини</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="15.483">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">39</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002278</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Шоколад Сафия с карамелью и арахисом</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">40</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002279</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Шоколад Сафия с кокосом</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">41</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001661</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Рогалики с вишней Сет 0,5</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">42</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002300</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Хлеб Тартин мини</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">43</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002242</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Яблочный кекс new</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">44</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000927</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Бородинский хлеб</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">45</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002241</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Вишневый кекс new</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="16.220">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">46</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001648</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Драже "Миндаль в шоколаде"</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">47</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001874</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Имбирный пряник Капкейк</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">48</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002148</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Имбирный пряник Стич</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">49</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002298</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Турецкий Чак-чак в упаковке</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="16.220">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">50</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001006</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Гречневые хлебцы мини сет (200гр)</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">51</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002290</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Гриссини в упаковке</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">52</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001689</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Луна печенье Сет 0,25</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">53</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001690</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Луна печенье Сет 0,5</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">12</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">12</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="22.856">
+        <Cell ss:Index="1" ss:StyleID="s5" ss:MergeAcross="1">
+          <Data ss:Type="String">№</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s5" ss:MergeAcross="2">
+          <Data ss:Type="String">Товар</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s5" ss:MergeAcross="1">
+          <Data ss:Type="String">Мест</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s5" ss:MergeAcross="5">
+          <Data ss:Type="String">Количество</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s5" ss:MergeAcross="2">
+          <Data ss:Type="String">Цена с НДС, тенге</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s5">
+          <Data ss:Type="String">Ставка НДС(%)</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s5">
+          <Data ss:Type="String">Сумма НДС, тенге</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s5" ss:MergeAcross="2">
+          <Data ss:Type="String">Сумма с НДС, тенге</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">54</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002251</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Мазурки сет Б 0,2кг</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">55</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002246</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Печенье Палочки в упаковке</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">56</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002274</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Кекс Апельсиновый шт</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">57</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002248</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Кукес печенье мини сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">58</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002253</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Овсянка сет Б</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">59</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001655</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Ракушки печенье Сет 0,2</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">60</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002254</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Сушки сет Б</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">61</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002299</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Муравейник</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">12</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">12</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">62</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002292</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Сушки мини сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">63</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00002296</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Трубочка со сгущенкой</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">64</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00001662</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Рогалики с орехом Сет</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.059">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">65</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000946</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Спорт Актив хлеб</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="11.796">
+        <Cell ss:Index="1" ss:StyleID="s6" ss:MergeAcross="1">
+          <Data ss:Type="String">66</Data>
+        </Cell>
+        <Cell ss:Index="3" ss:StyleID="s7" ss:MergeAcross="1">
+          <Data ss:Type="String">F00000550</Data>
+        </Cell>
+        <Cell ss:Index="5" ss:StyleID="s8">
+          <Data ss:Type="String">Чупа-попс- 15000</Data>
+        </Cell>
+        <Cell ss:Index="6" ss:StyleID="s9">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="7" ss:StyleID="s8">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="8" ss:StyleID="s9" ss:MergeAcross="3">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:Index="12" ss:StyleID="s8" ss:MergeAcross="1">
+          <Data ss:Type="String">шт</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s10">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s10">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s10" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="29.491">
+        <Cell ss:Index="1" ss:StyleID="s11" ss:MergeAcross="12">
+          <Data ss:Type="String">Итого</Data>
+        </Cell>
+        <Cell ss:Index="14" ss:StyleID="s12" ss:MergeAcross="2">
+          <Data ss:Type="String">x</Data>
+        </Cell>
+        <Cell ss:Index="17" ss:StyleID="s13">
+          <Data ss:Type="String">x</Data>
+        </Cell>
+        <Cell ss:Index="18" ss:StyleID="s14">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+        <Cell ss:Index="19" ss:StyleID="s14" ss:MergeAcross="2">
+          <Data ss:Type="Number">0.00</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="5.161">
+        <Cell ss:StyleID="s15" />
+        <Cell ss:Index="2" ss:StyleID="s15" />
+        <Cell ss:Index="3" ss:StyleID="s15" />
+        <Cell ss:Index="4" ss:StyleID="s15" />
+        <Cell ss:Index="5" ss:StyleID="s15" />
+        <Cell ss:Index="6" ss:StyleID="s15" />
+        <Cell ss:Index="7" ss:StyleID="s15" />
+        <Cell ss:Index="8" ss:StyleID="s15" />
+        <Cell ss:Index="9" ss:StyleID="s15" />
+        <Cell ss:Index="10" ss:StyleID="s15" />
+        <Cell ss:Index="11" ss:StyleID="s15" />
+        <Cell ss:Index="12" ss:StyleID="s15" />
+        <Cell ss:Index="13" ss:StyleID="s15" />
+        <Cell ss:Index="14" ss:StyleID="s15" />
+        <Cell ss:Index="15" ss:StyleID="s15" />
+        <Cell ss:Index="16" ss:StyleID="s15" />
+        <Cell ss:Index="17" ss:StyleID="s15" />
+        <Cell ss:Index="18" ss:StyleID="s15" />
+        <Cell ss:Index="19" ss:StyleID="s15" />
+        <Cell ss:Index="20" ss:StyleID="s15" />
+        <Cell ss:Index="21" ss:StyleID="s15" />
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="17.695">
+        <Cell ss:Index="2" ss:StyleID="s16" ss:MergeAcross="18">
+          <Data ss:Type="String">Всего наименований 66, на сумму 0,00 тенге</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="34.652">
+        <Cell ss:Index="2" ss:StyleID="s3" ss:MergeAcross="18">
+          <Data ss:Type="String">Ноль тенге 00 тиын</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="5.898" />
+      <Row ss:AutoFitHeight="0" ss:Height="17.695">
+        <Cell ss:Index="2" ss:StyleID="s17" ss:MergeAcross="6">
+          <Data ss:Type="String">Отпустил</Data>
+        </Cell>
+        <Cell ss:Index="9" ss:StyleID="s17" ss:MergeAcross="12">
+          <Data ss:Type="String">Получил</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="5.898">
+        <Cell ss:Index="2" ss:StyleID="s17" ss:MergeAcross="6" />
+        <Cell ss:Index="9" ss:StyleID="s17" ss:MergeAcross="12" />
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="0.737" />
+    </Table>
+    <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+      <PageSetup>
+        <PageMargins x:Bottom="0.394" x:Left="0.394" x:Right="0.394" x:Top="0.394" />
+      </PageSetup>
+      <DoNotDisplayGridlines />
+      <ProtectObjects>False</ProtectObjects>
+      <ProtectScenarios>False</ProtectScenarios>
+      <Print>
+        <ValidPrinterInfo />
+        <PaperSizeIndex>9</PaperSizeIndex>
+        <HorizontalResolution>600</HorizontalResolution>
+        <VerticalResolution>600</VerticalResolution>
+      </Print>
+    </WorksheetOptions>
+  </Worksheet>
+</Workbook>
