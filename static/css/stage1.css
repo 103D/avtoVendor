@@ -1,0 +1,169 @@
+/* Stage 1 specific styles */
+
+.stage1-container {
+    display: grid;
+    gap: 40px;
+}
+
+.upload-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 0.9em;
+    color: var(--gray-color);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--light-color);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--light-color);
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+.file-icon {
+    font-size: 2em;
+}
+
+.file-details {
+    flex: 1;
+}
+
+.file-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 4px;
+}
+
+.file-size {
+    font-size: 0.85em;
+    color: var(--gray-color);
+}
+
+.remove-file {
+    padding: 8px 12px;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background 0.3s ease;
+}
+
+.remove-file:hover {
+    background: #c0392b;
+}
+
+/* Table animations */
+.table-row {
+    animation: slideIn 0.3s ease;
+}
+
+.table-row:nth-child(even) {
+    animation-delay: 0.05s;
+}
+
+.table-row:nth-child(3n) {
+    animation-delay: 0.1s;
+}
+
+/* Input validation states */
+.input-wrapper {
+    position: relative;
+}
+
+.input-error-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--danger-color);
+    font-size: 1.2em;
+    display: none;
+}
+
+.cell-input.error + .input-error-icon {
+    display: block;
+}
+
+/* Loading states */
+.loading-spinner {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.loading-text {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Success checkmark */
+.success-icon {
+    color: var(--success-color);
+    font-size: 1.5em;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray-color);
+}
+
+.empty-state-icon {
+    font-size: 3em;
+    margin-bottom: 16px;
+}
+
+.empty-state-text {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.empty-state-subtext {
+    font-size: 0.9em;
+}
+
+.branch-card {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.branch-card--sells {
+    background: #f0f8ff;
+    border-left: 4px solid #667eea;
+}
+
+.branch-card--sdoba {
+    background: #fff7e6;
+    border-left: 4px solid #f39c12;
+}
