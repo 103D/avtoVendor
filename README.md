@@ -1,3 +1,11 @@
+# web_interface_production
+
+Repository uploaded from local project `web_interface_production`.
+
+Instructions:
+
+- This is a Flask-based web interface. Run with `python run.py`.
+- See `requirements.txt` for dependencies.
 # Веб-интерфейс ЛАССИО - Этап 1
 
 Веб-приложение для управления товарами: загрузка Excel файла, трансформация данных в таблицу, заполнение фактических количеств.

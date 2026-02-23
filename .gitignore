@@ -1,0 +1,15 @@
+venv/
+.env
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.flask_session/
+flask_session/
+sessions/
+uploads/
+*.sqlite3
+*.log
+.vscode/
+.idea/
