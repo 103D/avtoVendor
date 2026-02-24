@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Session/runtime data
+sessions/
+flask_session/
+
+# Local data and logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+

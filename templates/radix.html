@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Цех: Редактирование товаров</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('main.favicon') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <style>
+      :root {
+        --primary-color: #d4af37;
+        --secondary-color: #2c3e50;
+        --accent-color: #e8d5b7;
+        --success-color: #2ecc71;
+        --warning-color: #f39c12;
+        --danger-color: #e74c3c;
+        --dark-color: #2c3e50;
+        --light-color: #f8f6f3;
+        --gray-color: #95a5a6;
+        --border-color: #e0d7ce;
+        --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+      }
+
+      body {
+        font-family:
+          'Segoe UI',
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        margin: 20px;
+        background: var(--light-color);
+        color: var(--dark-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .header {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #1a252f 100%);
+        color: var(--primary-color);
+        padding: 50px 20px;
+        text-align: center;
+        border-bottom: 3px solid var(--primary-color);
+      }
+
+      .header h1 {
+        font-size: 2.2em;
+        margin-bottom: 8px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      h2 {
+        color: var(--dark-color);
+        margin-top: 20px;
+        font-weight: 600;
+      }
+
+      button {
+        padding: 12px 24px;
+        margin: 8px;
+        background: var(--primary-color);
+        color: var(--dark-color);
+        border: 2px solid var(--primary-color);
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background: #e6a028;
+        border-color: #e6a028;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      button:disabled {
+        background: var(--gray-color);
+        border-color: var(--gray-color);
+        cursor: not-allowed;
+      }
+
+      .alert {
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 6px;
+        border-left: 4px solid;
+      }
+
+      .alert-success {
+        background: #d4edda;
+        color: #155724;
+        border-left-color: var(--success-color);
+      }
+
+      .alert-error {
+        background: #f8d7da;
+        color: #721c24;
+        border-left-color: var(--danger-color);
+      }
+
+      .alert-info {
+        background: #d1ecf1;
+        color: #0c5460;
+        border-left-color: var(--secondary-color);
+      }
+
+      .alert-loading {
+        background: #e7f3ff;
+        color: #004085;
+        border-left-color: var(--secondary-color);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        box-shadow: var(--shadow);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        padding: 14px;
+        text-align: left;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background: var(--secondary-color);
+        color: var(--primary-color);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      tr:nth-child(even) {
+        background: var(--light-color);
+      }
+
+      tr:hover {
+        background: var(--accent-color);
+      }
+
+      tr.row-warning td {
+        background: #3b82f666 !important;
+      }
+
+      tr.row-warning:hover td {
+        background: #3b82f666 !important;
+      }
+
+      .button-group {
+        margin: 20px 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      #resultsTable {
+        display: none;
+        margin-top: 30px;
+        padding: 20px;
+      }
+
+      #statusMessage {
+        margin: 15px 0;
+      }
+
+      input[type='number'] {
+        width: 100px;
+        padding: 8px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      input[type='text'],
+      input[type='password'],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      input[type='text']:focus,
+      input[type='password']:focus,
+      input[type='number']:focus,
+      select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+      }
+
+      .edit-column {
+        background: #fef5e7;
+      }
+
+      .spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .main-content {
+        padding: 30px 20px;
+      }
+
+      .stage-section {
+        margin-bottom: 30px;
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+        border-radius: 6px;
+        box-shadow: var(--shadow);
+      }
+
+      #commentsStage {
+        background: var(--light-color);
+        padding: 20px;
+        border-radius: 6px;
+        border-left: 4px solid var(--primary-color);
+      }
+
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        resize: vertical;
+      }
+
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+      }
+
+      .footer-link {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+      }
+
+      #addProductModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      #addProductModal.show {
+        display: flex;
+      }
+
+      .doc-buttons-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .doc-button {
+        border: 1px solid var(--border-color);
+        background: white;
+        color: var(--secondary-color);
+        padding: 8px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .doc-button.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+      }
+
+      .doc-buttons-empty {
+        color: #777;
+        font-size: 13px;
+        padding: 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🏭 Цех: Редактирование товаров</h1>
+      </div>
+
+      <div class="main-content">
+        <div
+          id="login-section"
+          style="
+            display: none;
+            background: var(--light-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+          "
+        >
+          <h2 style="font-size: 18px; margin-top: 0; margin-bottom: 15px">
+            📝 Требуется аутентификация
+          </h2>
+
+          <div
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px"
+          >
+            <div>
+              <label for="username" style="display: block; margin-bottom: 5px; font-weight: 500"
+                >Логин:</label
+              >
+              <input type="text" id="username" placeholder="Введите логин" />
+            </div>
+            <div>
+              <label for="password" style="display: block; margin-bottom: 5px; font-weight: 500"
+                >Пароль:</label
+              >
+              <input type="password" id="password" placeholder="Введите пароль" />
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button
+              onclick="stage2Manager.authenticate()"
+              style="background: var(--primary-color); flex: 1"
+            >
+              🔐 Вход
+            </button>
+            <button
+              onclick="stage2Manager.reset()"
+              style="background: var(--accent-color); flex: 1"
+            >
+              🔄 Сбросить
+            </button>
+          </div>
+        </div>
+
+        <div id="statusMessage"></div>
+
+        <div id="resultsTable">
+          <h2>📦 Товары</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>SKU</th>
+                  <th>Название</th>
+                  <th>Отправилось</th>
+                  <th>По накладной</th>
+                  <th class="edit-column">По факту</th>
+                  <th>Отправить</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+          <!-- buttons moved below missing-items section -->
+        </div>
+
+        <div class="button-group" style="margin-top: 10px">
+          <button
+            onclick="stage2Manager.generateCommentsOnly()"
+            id="btnCommentsOnly"
+            style="display: none; background: #6c757d; color: white"
+          >
+            📝 Комментарий
+          </button>
+          <button
+            onclick="stage2Manager.showAddProductModal()"
+            id="btnAddProduct"
+            style="display: none; background: #27ae60; color: white"
+          >
+            ➕ Добавить товар
+          </button>
+        </div>
+
+        <div id="commentsStage" style="display: none; margin-top: 30px">
+          <h2 style="margin-top: 0">📝 Этап 3: Комментарий</h2>
+          <p style="margin-bottom: 15px">Перечень изменённых товаров:</p>
+          <div id="commentsContainer"></div>
+          <textarea id="commentsText" readonly style="height: 200px; background: white"></textarea>
+          <div class="button-group" style="margin-top: 15px">
+            <button onclick="stage2Manager.backToEdit()" style="background: var(--accent-color)">
+              ← Вернуться
+            </button>
+          </div>
+          <div
+            id="copySuccess"
+            style="display: none; color: var(--success-color); margin-top: 10px; font-weight: 500"
+          >
+            ✅ Скопировано в буфер обмена!
+          </div>
+        </div>
+
+        <div class="footer-link">
+          <a href="/">← Вернуться на Этап 1</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal для добавления нового товара -->
+    <div id="addProductModal">
+      <div
+        style="
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+          max-width: 500px;
+          width: 90%;
+          max-height: 90vh;
+          overflow-y: auto;
+        "
+      >
+        <h2 style="margin-top: 0; color: var(--secondary-color)">➕ Поиск и добавление товара</h2>
+        <p style="color: #666; margin-bottom: 20px">Товар, которого нет в накладной</p>
+
+        <form
+          id="addProductForm"
+          onsubmit="return false;"
+          style="display: flex; flex-direction: column; gap: 15px; position: relative"
+        >
+          <div style="position: relative; width: 100%">
+            <label
+              style="
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 500;
+                color: var(--secondary-color);
+              "
+              >🔍 Поиск товара по названию</label
+            >
+            <input
+              type="text"
+              id="productSearch"
+              placeholder="Начните вводить название товара..."
+              autocomplete="off"
+              style="
+                width: 100%;
+                padding: 10px;
+                border: 1px solid var(--border-color);
+                border-radius: 5px;
+                font-size: 14px;
+                box-sizing: border-box;
+              "
+            />
+            <div
+              id="searchResults"
+              style="
+                position: absolute;
+                background: white;
+                border: 1px solid var(--border-color);
+                border-top: none;
+                border-radius: 0 0 5px 5px;
+                max-height: 200px;
+                overflow-y: auto;
+                width: 100%;
+                display: none;
+                top: 100%;
+                left: 0;
+                z-index: 10;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+              "
+            ></div>
+          </div>
+
+          <div
+            id="selectedProductInfo"
+            style="
+              display: none;
+              padding: 15px;
+              background: #f0f8ff;
+              border: 1px solid #b3d9ff;
+              border-radius: 5px;
+            "
+          >
+            <p style="margin: 0 0 5px 0; font-size: 12px; color: #666">✅ Выбранный товар:</p>
+            <p
+              id="selectedProductName"
+              style="margin: 5px 0; font-weight: 500; font-size: 15px"
+            ></p>
+            <p id="selectedProductSku" style="margin: 0; font-size: 12px; color: #666"></p>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: flex-start">
+            <div style="flex: 1; min-width: 120px">
+              <label
+                style="
+                  display: block;
+                  margin-bottom: 5px;
+                  font-weight: 500;
+                  color: var(--secondary-color);
+                "
+                >Количество</label
+              >
+              <input
+                type="number"
+                id="newProductQty"
+                step="0.01"
+                min="0"
+                value="1"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid var(--border-color);
+                  border-radius: 5px;
+                  font-size: 14px;
+                  box-sizing: border-box;
+                "
+              />
+            </div>
+
+            <div style="flex: 2">
+              <label
+                style="
+                  display: block;
+                  margin-bottom: 5px;
+                  font-weight: 500;
+                  color: var(--secondary-color);
+                "
+                >Выберите документ</label
+              >
+              <div id="newProductDocumentButtons" class="doc-buttons-wrap"></div>
+              <p style="margin: 6px 0 0 0; font-size: 12px; color: #777">
+                Можно выбрать только один документ
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-top: 20px">
+            <button
+              type="button"
+              onclick="stage2Manager.addProductToTable()"
+              style="
+                flex: 1;
+                padding: 12px;
+                background: var(--primary-color);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-weight: 500;
+                cursor: pointer;
+                font-size: 14px;
+              "
+            >
+              ✅ Добавить
+            </button>
+            <button
+              type="button"
+              onclick="stage2Manager.closeAddProductModal()"
+              style="
+                flex: 1;
+                padding: 12px;
+                background: #95a5a6;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-weight: 500;
+                cursor: pointer;
+                font-size: 14px;
+              "
+            >
+              ❌ Отмена
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Anti-Cache Script -->
+    <script>
+      // Очищаем LocalStorage, SessionStorage и устанавливаем флаг версии
+      try {
+        const VERSION = '20251226-v3';
+        const lastVersion = localStorage.getItem('app_version');
+
+        if (lastVersion !== VERSION) {
+          console.log('🔄 Версия приложения обновлена, очищаем кеш...');
+          // Сохраняем важные данные перед очисткой
+          const jwtToken = localStorage.getItem('jwtToken');
+          const sessionId = localStorage.getItem('sessionId');
+
+          localStorage.clear();
+          sessionStorage.clear();
+
+          // Восстанавливаем важные данные
+          if (jwtToken) localStorage.setItem('jwtToken', jwtToken);
+          if (sessionId) localStorage.setItem('sessionId', sessionId);
+          localStorage.setItem('app_version', VERSION);
+        }
+      } catch (e) {
+        console.warn('Не удалось очистить хранилище:', e);
+      }
+    </script>
+
+    <script src="{{ url_for('static', filename='js/radix.js') }}?t={{ range(1000000, 9999999) | random }}"></script>
+  </body>
+</html>
