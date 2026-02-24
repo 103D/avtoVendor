@@ -125,19 +125,38 @@ class Stage2Manager {
     }
 
     notifyTelegram(action) {
-        // don't attempt Telegram notifications in local dev to avoid errors
-        const host = window.location.hostname;
-        if (host === '127.0.0.1' || host === 'localhost') {
-            console.log('ℹ️ Skipping Telegram notify in local environment');
-            return;
-        }
+        // Telegram notifications are enabled
 
         const login = this.getAccountLogin();
         const docs = this.getDocumentNumbers();
+
+        // Build per-document counts: total items and changed items
+        const docTotals = {};
+        const docChanged = {};
+        if (Array.isArray(this.currentRows)) {
+            this.currentRows.forEach((row, idx) => {
+                const doc = row.document_number || 'Без документа';
+                docTotals[doc] = (docTotals[doc] || 0) + 1;
+                // determine if changed or new
+                const input = document.getElementById(`qty_${idx}`);
+                let isChanged = false;
+                if (input) {
+                    const newQty = parseFloat(input.value) || 0;
+                    const original = parseFloat(input.dataset.originalQty) || 0;
+                    if (row.isNew || newQty !== original) isChanged = true;
+                } else {
+                    // fallback: consider new products as changed
+                    if (row.isNew) isChanged = true;
+                }
+                if (isChanged) docChanged[doc] = (docChanged[doc] || 0) + 1;
+            });
+        }
+
         const payload = {
             action: action,
             account_login: login,
             document_numbers: docs,
+            document_counts: { totals: docTotals, changed: docChanged },
             branch: 'Sells',
             clicked_at: new Date().toLocaleString('ru-RU')
         };

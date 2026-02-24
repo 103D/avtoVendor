@@ -1002,8 +1002,21 @@ def notify_telegram():
             f'Логин: {account_login}\n'
             f'Режим: {branch}\n'
             f'Документы: {doc_text}\n'
-            # f'Записей: {len(document_numbers)}'
         )
+
+        # If frontend supplied document_counts, include totals/changed in message
+        doc_counts = data.get('document_counts') or {}
+        try:
+            totals = doc_counts.get('totals') or {}
+            changed = doc_counts.get('changed') or {}
+            if totals:
+                parts = []
+                for d, t in totals.items():
+                    c = changed.get(d) or 0
+                    parts.append(f'{d}: {t} поз., изменено {c}')
+                message += '\n' + ' | '.join(parts)
+        except Exception:
+            pass
 
         response = requests.post(
             f'https://api.telegram.org/bot{bot_token}/sendMessage',
