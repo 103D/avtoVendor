@@ -374,8 +374,33 @@ class Stage2Manager {
             }
         });
         
-        // Объединяем товары API и новые вручную добавленные товары
-        const allRows = [...rows, ...this.newProducts];
+        // Добавляем отсутствующие на сервере позиции из invoiceData (они есть в накладной)
+        const missingRows = [];
+        try {
+            const invoiceSkus = this.invoiceData ? Object.keys(this.invoiceData) : [];
+            const existingSkus = new Set(rows.map(r => r.sku));
+            const newSkus = new Set(this.newProducts.map(p => p.sku));
+            invoiceSkus.forEach(sku => {
+                if (!existingSkus.has(sku) && !newSkus.has(sku)) {
+                    const invoiceQty = this.invoiceData[sku];
+                    const nameFromInvoice = (this.invoiceNames && this.invoiceNames[sku]) || sku;
+                    const docNum = documentMapping[sku] || '';
+                    missingRows.push({
+                        sku: sku,
+                        name: nameFromInvoice,
+                        api_qtn: undefined, // will render as '-'
+                        invoice_qty: invoiceQty,
+                        isNew: false,
+                        document_number: docNum
+                    });
+                }
+            });
+        } catch (e) {
+            console.warn('Не удалось сформировать missingRows:', e);
+        }
+
+        // Объединяем товары API, отсутствующие позиции из накладной и новые вручную добавленные товары
+        const allRows = [...rows, ...missingRows, ...this.newProducts];
         this.currentRows = allRows; // Сохраняем all rows для отправки
 
         console.log(`\n=== НАЧАЛО displayTable() ===`);
