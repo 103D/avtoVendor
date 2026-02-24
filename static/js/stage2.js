@@ -391,6 +391,7 @@ class Stage2Manager {
                         api_qtn: undefined, // will render as '-'
                         invoice_qty: invoiceQty,
                         isNew: false,
+                        isMissing: true,
                         document_number: docNum
                     });
                 }
@@ -467,14 +468,21 @@ class Stage2Manager {
             // Значение "На сервере" - это значение api_qtn из GET запроса (для отсутствующих — '-')
             const serverQtyDisplay = (row.api_qtn !== undefined) ? row.api_qtn : '-';
             
-            // Подсвечиваем новые товары
-            const rowStyle = row.isNew ? 'background-color: #fff8dc; font-weight: 500;' : '';
-            const newBadge = row.isNew ? ' <span style="color: #f39c12; font-weight: bold;">[НОВЫЙ]</span>' : '';
+            // Подсвечиваем новые и отсутствующие на сервере товары
+            let rowStyle = '';
+            let badge = '';
+            if (row.isNew) {
+                rowStyle = 'background-color: #fff8dc; font-weight: 500;';
+                badge = ' <span style="color: #f39c12; font-weight: bold;">[НОВЫЙ]</span>';
+            } else if (row.isMissing) {
+                rowStyle = 'background-color: #fff8c4; font-weight: 500;';
+                badge = ' <span style="color: #b08900; font-weight: bold;">[ОТСУТСТВУЕТ]</span>';
+            }
             
             const tr_html = `
                 <td style="${rowStyle}">${idx + 1}</td>
                 <td style="${rowStyle}">${row.sku}</td>
-                <td style="${rowStyle}">${row.name}${newBadge}</td>
+                <td style="${rowStyle}">${row.name}${badge}</td>
                 <td style="${rowStyle}">${serverQtyDisplay}</td>
                 <td style="${rowStyle}">${invoiceQtyDisplay}</td>
                 <td class="edit-column" style="${rowStyle}"></td>

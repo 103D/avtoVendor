@@ -398,6 +398,15 @@ body {
     border-top: 1px solid var(--border-color);
 }
 
+/* Missing-on-server rows (present in invoice but absent on server) */
+tr.row-missing td {
+    background: #fff8c4 !important;
+}
+
+tr.row-missing:hover td {
+    background: #fff8c4 !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .header h1 {
