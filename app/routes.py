@@ -105,6 +105,62 @@ def get_token():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
+@api_bp.route('/notify-telegram', methods=['POST'])
+def notify_telegram():
+    """Отправка уведомлений в Telegram при действиях в режиме по отдельности"""
+    try:
+        data = request.get_json() or {}
+        action = (data.get('action') or '').strip()
+        account_login = (data.get('account_login') or 'неизвестно').strip()
+        document_numbers = data.get('document_numbers') or []
+        clicked_at = (data.get('clicked_at') or '').strip()
+
+        bot_token = os.getenv('TELEGRAM_BOT_TOKEN')
+        chat_id = os.getenv('TELEGRAM_CHAT_ID')
+
+        if not bot_token or not chat_id:
+            return jsonify({'success': False, 'error': 'TELEGRAM_BOT_TOKEN или TELEGRAM_CHAT_ID не задан'}), 400
+
+        action_map = {
+            'send_all': 'Отправить все',
+            'comments_only': 'Комментарий'
+        }
+        action_label = action_map.get(action, action or 'Неизвестное действие')
+
+        if isinstance(document_numbers, list):
+            doc_text = ', '.join([str(x) for x in document_numbers]) or 'нет'
+        else:
+            doc_text = str(document_numbers) if document_numbers else 'нет'
+
+        if not clicked_at:
+            clicked_at = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
+
+        message = (
+            'АвтоVendor\n'
+            f'Действие: {action_label}\n'
+            f'Логин: {account_login}\n'
+            f'Документы: {doc_text}\n'
+            f'Время: {clicked_at}'
+        )
+
+        response = requests.post(
+            f'https://api.telegram.org/bot{bot_token}/sendMessage',
+            json={
+                'chat_id': chat_id,
+                'text': message,
+                'disable_web_page_preview': True
+            },
+            timeout=10
+        )
+
+        if response.status_code != 200:
+            return jsonify({'success': False, 'error': f'Telegram API: {response.status_code}'}), 400
+
+        return jsonify({'success': True}), 200
+    except requests.exceptions.Timeout:
+        return jsonify({'success': False, 'error': 'Timeout Telegram API'}), 408
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
 @api_bp.route('/upload-file', methods=['POST'])
 def upload_file():
     """Temporary file handling - files are processed and then deleted"""

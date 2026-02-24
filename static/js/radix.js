@@ -45,6 +45,58 @@ class Stage2Manager {
         }
     }
 
+    getAccountLogin() {
+        const savedLogin = localStorage.getItem('accountLogin');
+        if (savedLogin) {
+            return savedLogin;
+        }
+        const input = document.getElementById('username');
+        if (input && input.value.trim()) {
+            return input.value.trim();
+        }
+        return 'неизвестно';
+    }
+
+    getDocumentNumbers() {
+        if (Array.isArray(this.documentNumbers) && this.documentNumbers.length > 0) {
+            return this.documentNumbers;
+        }
+
+        const docs = new Set();
+        if (Array.isArray(this.currentRows)) {
+            this.currentRows.forEach(row => {
+                if (row && row.document_number) {
+                    docs.add(row.document_number);
+                }
+            });
+        }
+        return Array.from(docs);
+    }
+
+    notifyTelegram(action) {
+        const payload = {
+            action: action,
+            account_login: this.getAccountLogin(),
+            document_numbers: this.getDocumentNumbers(),
+            clicked_at: new Date().toLocaleString('ru-RU')
+        };
+
+        fetch('/api/notify-telegram', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (!data.success) {
+                console.warn(`⚠️ Telegram: ${data.error || 'не удалось отправить уведомление'}`);
+            }
+        })
+        .catch(e => {
+            console.warn(`⚠️ Telegram: ${e.message}`);
+        });
+    }
+
     loadInvoiceData() {
         const invoiceDataStr = localStorage.getItem('invoiceData');
         const invoiceNamesStr = localStorage.getItem('invoiceNames');
@@ -120,6 +172,7 @@ class Stage2Manager {
                 this.showStatus('✅ Аутентификация успешна!', 'success');
                 document.getElementById('username').disabled = true;
                 document.getElementById('password').disabled = true;
+                localStorage.setItem('accountLogin', username);
                 console.log('✅ JWT токен получен:', jwtToken.substring(0, 20) + '...');
                 // Автоматически загружаем товары
                 setTimeout(() => this.getMenuItems(), 500);
@@ -490,6 +543,8 @@ class Stage2Manager {
                 // Логируем изменения в историю
                 this.logChanges(payloads);
 
+            this.notifyTelegram('send_all');
+
                 // Сохраняем payloads для использования в returnQuantities
                 this.lastPayloads = payloads;
 
@@ -532,6 +587,7 @@ class Stage2Manager {
 
     generateCommentsOnly() {
         this.showStatus('📝 Сформированы только комментарии (без отправки на сервер)', 'success');
+        this.notifyTelegram('comments_only');
         this.generateComments();
     }
 
