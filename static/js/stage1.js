@@ -38,11 +38,15 @@ class Stage1 {
     }
 
     authenticate() {
+        console.log('🔵 authenticate() вызвана в Stage1Manager');
         const username = document.getElementById('username').value.trim();
         const password = document.getElementById('password').value.trim();
         const loginStatus = document.getElementById('loginStatus');
         
+        console.log(`📝 Попытка входа: username="${username}"`);
+        
         if (!username || !password) {
+            console.log('❌ Поля пусты');
             loginStatus.innerHTML = '<div style="background: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; font-size: 14px;">❌ Заполните логин и пароль</div>';
             return;
         }
@@ -56,19 +60,27 @@ class Stage1 {
         })
         .then(r => r.json())
         .then(d => {
+            console.log('🔵 Ответ от /api/get-token (Stage1):', { success: d.success });
             if (d.success && (d.token || d.jwt_token)) {
                 const jwtToken = d.token || d.jwt_token;
                 // Сохраняем токен в localStorage
-                localStorage.setItem('jwtToken', jwtToken);                
+                localStorage.setItem('jwtToken', jwtToken);
+                // Сохраняем логин в localStorage для использования в Stage 2
+                console.log('💾 Сохраняю accountLogin в localStorage:', username);
+                localStorage.removeItem('accountLogin');
+                localStorage.setItem('accountLogin', username);
+                console.log('✅ Логин сохранён в localStorage:', username);
                 // Скрываем форму логина, показываем загрузку файла
                 document.getElementById('login-section').style.display = 'none';
                 document.getElementById('upload-section').style.display = 'block';
                 loginStatus.innerHTML = '<div style="background: #d4edda; color: #155724; padding: 10px; border-radius: 4px; font-size: 14px;">✅ Вход успешен!</div>';
             } else {
+                console.log('❌ Ошибка аутентификации (Stage1):', d.error);
                 loginStatus.innerHTML = `<div style="background: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; font-size: 14px;">❌ ${d.error || 'Ошибка аутентификации'}</div>`;
             }
         })
         .catch(e => {
+            console.log('❌ Ошибка fetch (Stage1):', e.message);
             loginStatus.innerHTML = `<div style="background: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; font-size: 14px;">❌ ${e.message}</div>`;
         });
     }

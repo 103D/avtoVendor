@@ -22,6 +22,7 @@ class Stage2Manager {
         this.selectedDocument = ''; // Выбранный документ в модальном окне
         this.searchTimeout = null; // Таймаут для поиска
         this.loadJWTToken(); // Загружаем JWT токен из localStorage
+        this.loadSavedUsername(); // Загружаем сохраненный логин и заполняем поле
         this.log('✅ Stage 2 готов', 'info');
     }
 
@@ -41,6 +42,17 @@ class Stage2Manager {
             console.log('❌ Токен не найден, показываем форму логина');
             document.getElementById('login-section').style.display = 'block';
             this.showStatus('❌ Требуется аутентификация', 'error');
+        }
+    }
+
+    loadSavedUsername() {
+        const savedLogin = localStorage.getItem('accountLogin');
+        if (savedLogin) {
+            const usernameInput = document.getElementById('username');
+            if (usernameInput) {
+                usernameInput.value = savedLogin;
+                console.log('📝 Загружен сохраненный логин из localStorage:', savedLogin);
+            }
         }
     }
 
@@ -79,6 +91,70 @@ class Stage2Manager {
         }
     }
 
+    getAccountLogin() {
+        // Всегда используем текущий логин из поля (если он активен)
+        const input = document.getElementById('username');
+        if (input && input.value.trim()) {
+            console.log('📝 getAccountLogin из поля input:', input.value.trim());
+            return input.value.trim();
+        }
+        // Иначе берем из localStorage
+        const savedLogin = localStorage.getItem('accountLogin');
+        if (savedLogin) {
+            console.log('📝 getAccountLogin из localStorage:', savedLogin);
+            return savedLogin;
+        }
+        console.log('📝 getAccountLogin - используется "неизвестно"');
+        return 'неизвестно';
+    }
+
+    getDocumentNumbers() {
+        if (Array.isArray(this.documentNumbers) && this.documentNumbers.length > 0) {
+            return this.documentNumbers;
+        }
+
+        const docs = new Set();
+        if (Array.isArray(this.currentRows)) {
+            this.currentRows.forEach(row => {
+                if (row && row.document_number) {
+                    docs.add(row.document_number);
+                }
+            });
+        }
+        return Array.from(docs);
+    }
+
+    notifyTelegram(action) {
+        const login = this.getAccountLogin();
+        const docs = this.getDocumentNumbers();
+        const payload = {
+            action: action,
+            account_login: login,
+            document_numbers: docs,
+            branch: 'Sells',
+            clicked_at: new Date().toLocaleString('ru-RU')
+        };
+
+        console.log('📤 Telegram отправка:', { login, docs, action });
+
+        fetch('/api/notify-telegram', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (!data.success) {
+                console.warn(`⚠️ Telegram: ${data.error || 'не удалось отправить уведомление'}`);
+            } else {
+                console.log(`✅ Telegram отправлен: логин="${login}", действие="${action}"`);
+            }
+        })
+        .catch(e => {
+            console.warn(`⚠️ Telegram: ${e.message}`);
+        });
+    }
+
     loadSavedConfig() {
         fetch(`/api/load-config?session_id=${this.sessionId}`)
             .then(r => r.json())
@@ -93,10 +169,14 @@ class Stage2Manager {
     }
 
     authenticate() {
+        console.log('🔵 authenticate() вызвана в Stage2Manager');
         const username = document.getElementById('username').value.trim();
         const password = document.getElementById('password').value.trim();
         
+        console.log(`📝 Попытка входа: username="${username}"`);
+        
         if (!username || !password) {
+            console.log('❌ Поля пусты');
             this.showStatus('❌ Заполните имя пользователя и пароль', 'error');
             return;
         }
@@ -113,20 +193,31 @@ class Stage2Manager {
         })
         .then(r => r.json().then(d => ({status: r.status, data: d})))
         .then(({status, data}) => {
+            console.log('🔵 Ответ от /api/get-token:', { status, success: data.success });
             if (data.success && (data.token || data.jwt_token)) {
                 const jwtToken = data.token || data.jwt_token;
                 this.apiConfig = { jwt: jwtToken };
                 this.showStatus('✅ Аутентификация успешна!', 'success');
                 document.getElementById('username').disabled = true;
                 document.getElementById('password').disabled = true;
+                // Очищаем старый логин и устанавливаем новый
+                console.log('🧹 Удаляю старый accountLogin из localStorage');
+                localStorage.removeItem('accountLogin');
+                console.log('💾 Сохраняю новый accountLogin:', username);
+                localStorage.setItem('accountLogin', username);
+                console.log('✅ Новый логин сохранён в localStorage:', username);
                 console.log('✅ JWT токен получен:', jwtToken.substring(0, 20) + '...');
                 // Автоматически загружаем товары
                 setTimeout(() => this.getMenuItems(), 500);
             } else {
+                console.log('❌ Ошибка аутентификации:', data.error);
                 this.showStatus(`❌ ${data.error || 'Ошибка аутентификации'}`, 'error');
             }
         })
-        .catch(e => this.showStatus(`❌ ${e.message}`, 'error'));
+        .catch(e => {
+            console.log('❌ Ошибка fetch:', e.message);
+            this.showStatus(`❌ ${e.message}`, 'error');
+        });
     }
 
     getMenuItems() {
@@ -441,6 +532,9 @@ class Stage2Manager {
                 alert(`✅ Успешно отправлено ${data.success_count || payloads.length} товаров!`);
                 this.showStatus('', 'success');
                 
+                // Отправляем уведомление в Telegram
+                this.notifyTelegram('send_all');
+                
                 // Логируем изменения в историю
                 this.logChanges(payloads);
 
@@ -456,7 +550,10 @@ class Stage2Manager {
                         btnComments.id = 'btnComments';
                         btnComments.textContent = '📝 Перейти к комментариям';
                         btnComments.style.marginLeft = '10px';
-                        btnComments.onclick = () => this.generateComments();
+                        btnComments.onclick = () => {
+                            this.generateComments();
+                            this.notifyTelegram('comments_only');
+                        };
                         btnGroup.appendChild(btnComments);
                     }
 
@@ -487,6 +584,7 @@ class Stage2Manager {
     generateCommentsOnly() {
         this.showStatus('📝 Сформированы только комментарии (без отправки на сервер)', 'success');
         this.generateComments();
+        this.notifyTelegram('comments_only');
     }
 
     logChanges(payloads) {
@@ -1132,6 +1230,7 @@ class Stage2Manager {
         this.newProducts = []; // Очищаем новые товары
         this.apiConfig = null;
         this.currentRows = null;
+        localStorage.removeItem('accountLogin'); // Очищаем сохраненный логин для новой аутентификации
     }
 
     log(msg, type = 'info') {
