@@ -1013,7 +1013,7 @@ def notify_telegram():
                 parts = []
                 for d, t in totals.items():
                     c = changed.get(d) or 0
-                    parts.append(f'{d}: {t} поз., изменено {c}')
+                    parts.append(f'Позиций: {t} || изменено {c}')
                 message += '\n' + ' | '.join(parts)
         except Exception:
             pass
