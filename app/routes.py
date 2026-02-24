@@ -968,7 +968,16 @@ def notify_telegram():
         clicked_at = (data.get('clicked_at') or '').strip()
 
         bot_token = "8116036894:AAEy8xS4vxxNd9nSzJUXZL92C07ohEZGVeA"
-        chat_id = "-5142835347"
+        # read chat_id override from file if present, otherwise use updated supergroup id
+        default_chat_id = "-1003837264451"
+        chat_id_file = Path(__file__).parent.parent / 'telegram_chat_id.txt'
+        try:
+            if chat_id_file.exists():
+                chat_id = str(chat_id_file.read_text(encoding='utf-8').strip())
+            else:
+                chat_id = default_chat_id
+        except Exception:
+            chat_id = default_chat_id
 
         if not bot_token or not chat_id:
             return jsonify({'success': False, 'error': 'Telegram credentials not configured'}), 400
@@ -1006,8 +1015,46 @@ def notify_telegram():
             timeout=10
         )
 
+        # Try to include Telegram response details for easier debugging
+        resp_text = None
+        resp_json = None
+        try:
+            resp_json = response.json()
+        except Exception:
+            resp_text = response.text
+
         if response.status_code != 200:
-            return jsonify({'success': False, 'error': f'Telegram API: {response.status_code}'}), 400
+            print('⚠️ Telegram response status:', response.status_code)
+            print('⚠️ Telegram response json:', resp_json)
+            print('⚠️ Telegram response text:', resp_text)
+            # If Telegram indicates migration to a new chat id, save it for future use
+            try:
+                params = resp_json.get('parameters') if isinstance(resp_json, dict) else None
+                if params and 'migrate_to_chat_id' in params:
+                    new_id = str(params['migrate_to_chat_id'])
+                    try:
+                        chat_id_file.write_text(new_id, encoding='utf-8')
+                        print(f'ℹ️ Telegram chat_id migrated and saved: {new_id}')
+                    except Exception as e:
+                        print(f'⚠️ Не удалось сохранить новый chat_id: {e}')
+            except Exception:
+                pass
+            # Return detailed error when possible
+            detail = resp_json if resp_json is not None else (resp_text or '')
+            return jsonify({'success': False, 'error': f'Telegram API: {response.status_code}', 'detail': detail}), 400
+        else:
+            # On success, also check if Telegram returned migrate_to_chat_id and persist it
+            try:
+                params = resp_json.get('parameters') if isinstance(resp_json, dict) else None
+                if params and 'migrate_to_chat_id' in params:
+                    new_id = str(params['migrate_to_chat_id'])
+                    try:
+                        chat_id_file.write_text(new_id, encoding='utf-8')
+                        print(f'ℹ️ Telegram chat_id migrated and saved: {new_id}')
+                    except Exception as e:
+                        print(f'⚠️ Не удалось сохранить новый chat_id: {e}')
+            except Exception:
+                pass
 
         return jsonify({'success': True}), 200
     except requests.exceptions.Timeout:
