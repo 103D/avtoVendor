@@ -27,8 +27,8 @@ class Stage1 {
 
         const updateBranchUI = () => {
             const branchChoice = document.querySelector('input[name="branchTarget"]:checked');
-            const isSells = branchChoice && branchChoice.value === 'sells';
-            exordOptions.style.display = isSells ? 'block' : 'none';
+            const isTogether = branchChoice && branchChoice.value === 'together';
+            exordOptions.style.display = isTogether ? 'block' : 'none';
         };
 
         branchRadios.forEach(radio => {
@@ -196,8 +196,8 @@ class Stage1 {
         const btn = document.getElementById('transformBtn');
         btn.disabled = true;
         const branchChoice = document.querySelector('input[name="branchTarget"]:checked');
-        const isSells = branchChoice && branchChoice.value === 'sells';
-        const exordMode = !!isSells;
+        const isTogether = branchChoice && branchChoice.value === 'together';
+        const exordMode = !!isTogether;
         
         // Получаем выбранный столбец (по умолчанию "отправлено")
         let exordColumn = 'отправлено';
@@ -349,7 +349,7 @@ class Stage1 {
 
         const branchChoice = document.querySelector('input[name="branchTarget"]:checked');
         if (!branchChoice) {
-            alert('Выберите ветку: Sells или По отдельности');
+            alert('Выберите режим: Разом или По отдельности');
             return;
         }
         const branchTarget = branchChoice.value;
@@ -396,7 +396,7 @@ class Stage1 {
                 const next = document.createElement('button');
                 next.className = 'btn btn-primary';
                 const nextUrl = branchTarget === 'radix' ? '/radix' : '/stage2';
-                const nextLabel = branchTarget === 'radix' ? 'По отдельности' : 'Sells';
+                const nextLabel = branchTarget === 'radix' ? 'По отдельности' : 'Разом';
                 next.innerHTML = `<span class="btn-icon">➜</span>${nextLabel}`;
                 next.addEventListener('click', () => window.location.href = nextUrl);
                 btn.parentElement.appendChild(next);

@@ -152,12 +152,15 @@ class Stage2Manager {
             });
         }
 
+        const branchStored = localStorage.getItem('branchTarget') || 'together';
+        const branchLabel = branchStored === 'radix' ? 'По отдельности' : 'Разом';
+
         const payload = {
             action: action,
             account_login: login,
             document_numbers: docs,
             document_counts: { totals: docTotals, changed: docChanged },
-            branch: 'Sells',
+            branch: branchLabel,
             clicked_at: new Date().toLocaleString('ru-RU')
         };
 
