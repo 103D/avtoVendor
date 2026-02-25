@@ -22,19 +22,7 @@ class Stage1 {
         document.getElementById('transformBtn').addEventListener('click', () => this.transformFile());
         document.getElementById('validateBtn').addEventListener('click', () => this.validateAndSave());
 
-        const exordOptions = document.getElementById('exordOptions');
         const branchRadios = document.querySelectorAll('input[name="branchTarget"]');
-
-        const updateBranchUI = () => {
-            const branchChoice = document.querySelector('input[name="branchTarget"]:checked');
-            const isTogether = branchChoice && branchChoice.value === 'together';
-            exordOptions.style.display = isTogether ? 'block' : 'none';
-        };
-
-        branchRadios.forEach(radio => {
-            radio.addEventListener('change', updateBranchUI);
-        });
-        updateBranchUI();
     }
 
     authenticate() {
@@ -199,14 +187,8 @@ class Stage1 {
         const isTogether = branchChoice && branchChoice.value === 'together';
         const exordMode = !!isTogether;
         
-        // Получаем выбранный столбец (по умолчанию "отправлено")
+        // По умолчанию используем столбец "отправлено"
         let exordColumn = 'отправлено';
-        if (exordMode) {
-            const selectedColumn = document.querySelector('input[name="exordColumn"]:checked');
-            if (selectedColumn) {
-                exordColumn = selectedColumn.value;
-            }
-        }
 
         this.exordMode = exordMode;
         this.exordColumn = exordColumn;

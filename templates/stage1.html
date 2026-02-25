@@ -116,43 +116,9 @@
               />
               <span style="font-weight: 500">🔄 Режим "Разом"</span>
             </label>
-            <div
-              id="exordOptions"
-              style="
-                display: none;
-                margin: 15px 0 0 28px;
-                padding: 10px;
-                background: #fff;
-                border-radius: 4px;
-                border: 1px solid #ddd;
-              "
-            >
-              <p style="margin: 0 0 10px 0; font-size: 13px; color: #666; font-weight: 500">
-                Выберите столбец для обработки:
-              </p>
-              <label style="display: block; margin-bottom: 8px; cursor: pointer; font-size: 13px">
-                <input
-                  type="radio"
-                  name="exordColumn"
-                  value="отправлено"
-                  checked
-                  style="margin-right: 8px"
-                />
-                <strong>"Отправлено"</strong> - использовать столбец "Отправлено"
-              </label>
-              <label style="display: block; cursor: pointer; font-size: 13px">
-                <input
-                  type="radio"
-                  name="exordColumn"
-                  value="доставлено"
-                  style="margin-right: 8px"
-                />
-                <strong>"Доставлено"</strong> - использовать столбец "Доставлено"
-              </label>
-            </div>
             <p style="margin: 8px 0 0 28px; font-size: 13px; color: #666; line-height: 1.5">
-              Ищет выбранный столбец. Если в нём есть числа – берёт оттуда, если пустой или только
-              "-" – берёт первое число после названия товара.
+              Суммирует количества по всем документам в одну общую позицию — удобно, когда нужно
+              применить одно количество для всех (режим «Разом»).
             </p>
           </div>
           <div class="branch-card branch-card--sdoba">
@@ -166,8 +132,8 @@
               <span style="font-weight: 500">🔄 Режим "По отдельности"</span>
             </label>
             <p style="margin: 8px 0 0 28px; font-size: 13px; color: #666; line-height: 1.5">
-              Ищет выбранный столбец. Если в нём есть числа – берёт оттуда, если пустой или только
-              "-" – берёт первое число после названия товара.
+              Сохраняет количество отдельно для каждой позиции и документа — не суммирует значения
+              между документами (режим «По отдельности»).
             </p>
           </div>
           <button id="transformBtn" class="btn btn-primary">⚙️ Обработать</button>
