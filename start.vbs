@@ -11,6 +11,8 @@ shell.CurrentDirectory = scriptDir
 Dim pyCmd, fullCmd, logFile
 logFile = scriptDir & "\run_log.txt"
 pyCmd = "py -3 """ & scriptDir & "\run.py""" & " >> """ & logFile & """ 2>&1"
+' Ensure Python uses UTF-8 for IO so emojis and non-ASCII can be written to the log
+shell.Environment("PROCESS")("PYTHONIOENCODING") = "utf-8"
 fullCmd = "cmd /c " & pyCmd
 shell.Run fullCmd, 0, False
 

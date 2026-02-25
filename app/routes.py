@@ -111,10 +111,22 @@ def get_token():
         except requests.exceptions.Timeout:
             return jsonify({'success': False, 'error': 'Timeout при подключении к API'}), 408
         except Exception as e:
-            return jsonify({'success': False, 'error': f'Ошибка запроса: {str(e)}'}), 500
+            # Make error text safe for environments with limited encodings
+            try:
+                err_text = str(e)
+            except Exception:
+                err_text = repr(e)
+            # Replace non-encodable chars with python-style backslash escapes
+            safe_err = err_text.encode('utf-8', 'backslashreplace').decode('utf-8')
+            return jsonify({'success': False, 'error': f'Ошибка запроса: {safe_err}'}), 500
             
     except Exception as e:
-        return jsonify({'success': False, 'error': str(e)}), 500
+        try:
+            top_err = str(e)
+        except Exception:
+            top_err = repr(e)
+        safe_top_err = top_err.encode('utf-8', 'backslashreplace').decode('utf-8')
+        return jsonify({'success': False, 'error': safe_top_err}), 500
 
 @api_bp.route('/upload-file', methods=['POST'])
 def upload_file():

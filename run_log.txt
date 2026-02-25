@@ -23,3 +23,72 @@ Press CTRL+C to quit
 127.0.0.1 - - [25/Feb/2026 00:56:02] "GET /static/js/stage1.js?t=3929157 HTTP/1.1" 200 -
 127.0.0.1 - - [25/Feb/2026 00:56:02] "GET /static/css/stage1.css HTTP/1.1" 304 -
 127.0.0.1 - - [25/Feb/2026 00:56:02] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:50:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:50:02] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:50:02] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:50:02] "GET /static/js/stage1.js?t=8367815 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:50:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:50:04] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:50:04] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:50:04] "GET /static/js/stage1.js?t=4014129 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:50:07] "POST /api/get-token HTTP/1.1" 500 -
+127.0.0.1 - - [25/Feb/2026 10:50:10] "POST /api/get-token HTTP/1.1" 500 -
+127.0.0.1 - - [25/Feb/2026 10:50:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:50:11] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:50:11] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:50:11] "GET /static/js/stage1.js?t=2838119 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:50:11] "GET /favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:50:13] "POST /api/get-token HTTP/1.1" 500 -
+127.0.0.1 - - [25/Feb/2026 10:50:51] "POST /api/get-token HTTP/1.1" 500 -
+127.0.0.1 - - [25/Feb/2026 10:51:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:51:18] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:51:18] "GET /static/js/stage1.js?t=1254357 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:51:18] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:51:24] "POST /api/get-token HTTP/1.1" 500 -
+127.0.0.1 - - [25/Feb/2026 10:53:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:53:17] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:53:17] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:53:17] "GET /static/js/stage1.js?t=4969281 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:53:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:53:55] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:53:55] "GET /static/js/stage1.js?t=4435736 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:53:55] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:53:55] "GET /favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:53:57] "POST /api/get-token HTTP/1.1" 500 -
+127.0.0.1 - - [25/Feb/2026 10:54:00] "POST /api/get-token HTTP/1.1" 500 -
+127.0.0.1 - - [25/Feb/2026 10:54:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:54:00] "GET /static/js/stage1.js?t=5159332 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:54:00] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:54:00] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:54:00] "GET /favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:54:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:54:01] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:54:01] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:54:01] "GET /static/js/stage1.js?t=4683764 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:54:01] "GET /favicon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:54:03] "POST /api/get-token HTTP/1.1" 500 -
+127.0.0.1 - - [25/Feb/2026 10:54:06] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:54:06] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:54:06] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+ * Detected change in 'c:\\Users\\user\\Desktop\\Diyar\\avtoVendor-TelegramIntegration\\app\\routes.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 598-000-220
+ * Detected change in 'c:\\Users\\user\\Desktop\\Diyar\\avtoVendor-TelegramIntegration\\app\\routes.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 598-000-220
+127.0.0.1 - - [25/Feb/2026 10:55:48] "POST /api/get-token HTTP/1.1" 500 -
+ * Detected change in 'c:\\Users\\user\\Desktop\\Diyar\\avtoVendor-TelegramIntegration\\run.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 598-000-220
+ * Detected change in 'c:\\Users\\user\\Desktop\\Diyar\\avtoVendor-TelegramIntegration\\test_get_token.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 598-000-220
+127.0.0.1 - - [25/Feb/2026 10:57:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:57:29] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:57:29] "GET /static/js/stage1.js?t=9780774 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:57:29] "GET /static/css/stage1.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:57:32] "POST /api/get-token HTTP/1.1" 200 -
