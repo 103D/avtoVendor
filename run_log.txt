@@ -92,3 +92,310 @@ Press CTRL+C to quit
 127.0.0.1 - - [25/Feb/2026 10:57:29] "GET /static/js/stage1.js?t=9780774 HTTP/1.1" 200 -
 127.0.0.1 - - [25/Feb/2026 10:57:29] "GET /static/css/stage1.css HTTP/1.1" 304 -
 127.0.0.1 - - [25/Feb/2026 10:57:32] "POST /api/get-token HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:57:54] "POST /api/get-token HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:58:24] "POST /api/upload-file HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:58:34] "POST /api/transform-file HTTP/1.1" 200 -
+2026-02-25 10:58:38,687 - INFO - ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-02-25 10:58:38,689 - INFO - ✅ JSON сохранён: stage1_data.json
+2026-02-25 10:58:38,689 - INFO - ✅ Этап 1: 59 записей
+2026-02-25 10:58:38,691 - INFO - ✅ JSON сохранён: payloads.json
+2026-02-25 10:58:38,691 - INFO - 📊 Payloads: 59 записей
+127.0.0.1 - - [25/Feb/2026 10:58:38] "POST /api/save-stage1-data HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:58:40] "GET /stage2 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:58:40] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [25/Feb/2026 10:58:40] "GET /static/js/stage2.js?t=3180872 HTTP/1.1" 200 -
+2026-02-25 10:58:40,205 - INFO - ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-02-25 10:58:40,206 - WARNING - ⚠️ config.json не найден
+127.0.0.1 - - [25/Feb/2026 10:58:40] "GET /api/load-config?session_id=session_1768931690286_p2zzbtd4e HTTP/1.1" 200 -
+🔐 /api/get-token -> external status: 200
+🔐 /api/get-token -> external response: {'success': True, 'message': None, 'data': {'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTGFzc2lvIiwidXNlcklkIjoiMGRlNzM3M2EtNjgxNi00NzUwLTg0NzEtM2Q3ZjE3NzE3M2RlIiwicmVzSWQiOiI5YWNjY2NmNC1kZjg4LTRjM2QtOTc3Zi0zZTQzZDMwNTFjYjUiLCJyZXNOYW1lIjoi0JvQsNGB0YHQuNC-IiwiY291bnRyeUlkIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1hbmFnZXIiLCJuYmYiOjE3NzE5OTg1NTAsImV4cCI6MTc3MjAwMjE1MCwiaXNzIjoib3JkZXJDb25maXJtZXIudXoiLCJhdWQiOiJvcmRlckNvbmZpcm1lci51eiJ9.0rLrVtQLrFTrNZWp3HYfa3dcG_kVfumQmoOGpkiA1aA', 'dateTime': '2026-02-25T10:49:10.8910476+05:00', 'expiry': '2026-02-25T11:48:10.8910462+05:00'}}
+🔐 /api/get-token -> external status: 200
+🔐 /api/get-token -> external response: {'success': True, 'message': None, 'data': {'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTGFzc2lvIiwidXNlcklkIjoiMGRlNzM3M2EtNjgxNi00NzUwLTg0NzEtM2Q3ZjE3NzE3M2RlIiwicmVzSWQiOiI5YWNjY2NmNC1kZjg4LTRjM2QtOTc3Zi0zZTQzZDMwNTFjYjUiLCJyZXNOYW1lIjoi0JvQsNGB0YHQuNC-IiwiY291bnRyeUlkIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1hbmFnZXIiLCJuYmYiOjE3NzE5OTg1NTAsImV4cCI6MTc3MjAwMjE1MCwiaXNzIjoib3JkZXJDb25maXJtZXIudXoiLCJhdWQiOiJvcmRlckNvbmZpcm1lci51eiJ9.0rLrVtQLrFTrNZWp3HYfa3dcG_kVfumQmoOGpkiA1aA', 'dateTime': '2026-02-25T10:49:10.8910476+05:00', 'expiry': '2026-02-25T11:48:10.8910462+05:00'}}
+📤 Файл готов к обработке: orders_25.02.2026_25.02.2026_sells.xlsx
+
+🔍 /transform-file запрос:
+   Файлов в сессии: 1
+   Режим Экзорд: ВКЛЮЧЕН
+   Столбец Экзорд: отправлено
+   ⚙️ Обработка: orders_25.02.2026_25.02.2026_sells.xlsx
+   ✓ orders_25.02.2026_25.02.2026_sells.xlsx: 59 товаров из 2 документов
+      📋 Документ 12639: 49 товаров
+      📋 Документ 12641: 10 товаров
+   🗑️ Удален временный файл: orders_25.02.2026_25.02.2026_sells.xlsx
+✅ Итого обработано: 59 товаров из 1 файлов
+   Номера документов: 12639, 12641
+   Список файлов очищен, новый размер: 0
+
+
+============================================================
+📊 PAYLOADS (Stage 1):
+============================================================
+[
+  {
+    "sku": "F00002272",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002273",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00001646",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00001648",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00001644",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00001639",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002296",
+    "qtn": 4.0
+  },
+  {
+    "sku": "F00002278",
+    "qtn": 4.0
+  },
+  {
+    "sku": "F00000563",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002150",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002147",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00000511",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00000512",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002274",
+    "qtn": 3.0
+  },
+  {
+    "sku": "F00000550",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00000551",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002329",
+    "qtn": 3.0
+  },
+  {
+    "sku": "F00002284",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002246",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002275",
+    "qtn": 4.0
+  },
+  {
+    "sku": "F00002260",
+    "qtn": 3.0
+  },
+  {
+    "sku": "F00002287",
+    "qtn": 4.0
+  },
+  {
+    "sku": "F00002249",
+    "qtn": 9.0
+  },
+  {
+    "sku": "F00002257",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002256",
+    "qtn": 3.0
+  },
+  {
+    "sku": "F00002252",
+    "qtn": 4.0
+  },
+  {
+    "sku": "F00001904",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002254",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002255",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00001527",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002281",
+    "qtn": 5.0
+  },
+  {
+    "sku": "F00001006",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002290",
+    "qtn": 6.0
+  },
+  {
+    "sku": "F00002553",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002552",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002248",
+    "qtn": 3.0
+  },
+  {
+    "sku": "F00001654",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00001690",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002286",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00001655",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00001656",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00001660",
+    "qtn": 8.0
+  },
+  {
+    "sku": "F00001661",
+    "qtn": 8.0
+  },
+  {
+    "sku": "F00001662",
+    "qtn": 3.0
+  },
+  {
+    "sku": "F00001663",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002292",
+    "qtn": 4.0
+  },
+  {
+    "sku": "F00001193",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00001683",
+    "qtn": 4.0
+  },
+  {
+    "sku": "F00002299",
+    "qtn": 12.0
+  },
+  {
+    "sku": "F00000126",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00000473",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00001684",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00001687",
+    "qtn": 3.0
+  },
+  {
+    "sku": "F00001688",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00002295",
+    "qtn": 2.0
+  },
+  {
+    "sku": "F00000529",
+    "qtn": 6.0
+  },
+  {
+    "sku": "F00001659",
+    "qtn": 3.0
+  },
+  {
+    "sku": "F00002301",
+    "qtn": 1.0
+  },
+  {
+    "sku": "F00002300",
+    "qtn": 3.0
+  }
+]
+============================================================
+
+
+============================================================
+📥 GET-MENU-ITEMS получил запрос:
+   - JWT токен: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...
+   - invoice_data: {'F00002272': 2, 'F00002273': 2, 'F00001646': 2, 'F00001648': 1, 'F00001644': 1, 'F00001639': 2, 'F00002296': 4, 'F00002278': 4, 'F00000563': 1, 'F00002150': 1, 'F00002147': 1, 'F00000511': 1, 'F00000512': 1, 'F00002274': 3, 'F00000550': 1, 'F00000551': 2, 'F00002329': 3, 'F00002284': 1, 'F00002246': 1, 'F00002275': 4, 'F00002260': 3, 'F00002287': 4, 'F00002249': 9, 'F00002257': 1, 'F00002256': 3, 'F00002252': 4, 'F00001904': 2, 'F00002254': 2, 'F00002255': 2, 'F00001527': 2, 'F00002281': 5, 'F00001006': 1, 'F00002290': 6, 'F00002553': 2, 'F00002552': 2, 'F00002248': 3, 'F00001654': 1, 'F00001690': 1, 'F00002286': 2, 'F00001655': 1, 'F00001656': 1, 'F00001660': 8, 'F00001661': 8, 'F00001662': 3, 'F00001663': 1, 'F00002292': 4, 'F00001193': 1, 'F00001683': 4, 'F00002299': 12, 'F00000126': 1, 'F00000473': 1, 'F00001684': 2, 'F00001687': 3, 'F00001688': 2, 'F00002295': 2, 'F00000529': 6, 'F00001659': 3, 'F00002301': 1, 'F00002300': 3}
+   - Количество SKU в invoice_data: 59
+   - Количество названий в invoice_names: 59
+============================================================
+
+✅ API ответ получен, всего товаров: 26
+
+📦 ПЕРВЫЙ ТОВАР ИЗ API /api/menu/Menus:
+   - Ключи: ['id', 'name', 'nameRu', 'nameUz', 'nameEn', 'categoryId', 'imageUrl', 'price', 'qtn', 'sku', 'changedQtn', 'order', 'isCombo', 'isSet', 'isAvailable', 'modifiers']
+   - id: 729a5f4f-3d39-4aed-8495-aacb2f0e9ac0
+   - productId: None
+   - sku: 90426
+
+   - Всего товаров в API: 375
+   - Товаров в накладной: 59
+   - Найдено в API: 51
+   - Не найдено в API: 8
+   - SKU не найдены: ['F00002329', 'F00001904', 'F00001527', 'F00002290', 'F00002553']...
+
+====================================================================================================
+📋 ТОВАРЫ ИЗ НАКЛАДНОЙ, ОТСУТСТВУЮЩИЕ НА СЕРВЕРЕ:
+====================================================================================================
+№     SKU                  Название                                 Количество     
+----------------------------------------------------------------------------------------------------127.0.0.1 - - [25/Feb/2026 10:58:42] "POST /api/get-menu-items HTTP/1.1" 200 -
+127.0.0.1 - - [25/Feb/2026 10:58:48] "POST /api/notify-telegram HTTP/1.1" 200 -
