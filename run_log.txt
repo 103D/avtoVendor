@@ -1105,3 +1105,39 @@
 2026-02-26 12:00:09,189 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:00:09] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
 2026-02-26 12:00:09,199 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:00:09] "GET /static/css/style.css HTTP/1.1" 200 -
 2026-02-26 12:00:09,200 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:00:09] "GET /static/js/stage2.js?t=4844862 HTTP/1.1" 200 -
+2026-02-26 12:35:04,401 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.2.207:5000
+2026-02-26 12:35:04,402 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-02-26 12:35:04,405 INFO werkzeug:  * Restarting with stat
+2026-02-26 12:35:05,930 WARNING werkzeug:  * Debugger is active!
+2026-02-26 12:35:05,936 INFO werkzeug:  * Debugger PIN: 383-618-984
+2026-02-26 12:35:06,163 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:35:06] "GET / HTTP/1.1" 200 -
+2026-02-26 12:35:06,383 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:35:06] "[36mGET /static/css/stage1.css HTTP/1.1[0m" 304 -
+2026-02-26 12:35:06,385 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:35:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-26 12:35:06,397 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:35:06] "GET /static/js/stage1.js?t=4857456 HTTP/1.1" 200 -
+2026-02-26 12:35:06,922 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:35:06] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2026-02-26 12:35:14,599 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): orderconfirmer-api.safiadelivery.com:443
+2026-02-26 12:35:15,893 DEBUG urllib3.connectionpool: https://orderconfirmer-api.safiadelivery.com:443 "POST /api/account/token HTTP/1.1" 200 None
+2026-02-26 12:35:15,909 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:35:15] "POST /api/get-token HTTP/1.1" 200 -
+2026-02-26 12:35:26,439 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:35:26] "POST /api/upload-file HTTP/1.1" 200 -
+2026-02-26 12:35:31,819 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:35:31] "POST /api/transform-file HTTP/1.1" 200 -
+2026-02-26 12:37:08,302 INFO session_session_1768931690286_p2zzbtd4e: ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-02-26 12:37:08,304 INFO session_session_1768931690286_p2zzbtd4e: ✅ JSON сохранён: stage1_data.json
+2026-02-26 12:37:08,305 INFO session_session_1768931690286_p2zzbtd4e: ✅ Этап 1: 101 записей
+2026-02-26 12:37:08,309 INFO session_session_1768931690286_p2zzbtd4e: ✅ JSON сохранён: payloads.json
+2026-02-26 12:37:08,311 INFO session_session_1768931690286_p2zzbtd4e: 📊 Payloads: 101 записей
+2026-02-26 12:37:08,317 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:37:08] "POST /api/save-stage1-data HTTP/1.1" 200 -
+2026-02-26 12:37:10,059 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:37:10] "GET /stage2 HTTP/1.1" 200 -
+2026-02-26 12:37:10,141 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:37:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-26 12:37:10,176 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:37:10] "GET /static/js/stage2.js?t=9687167 HTTP/1.1" 200 -
+2026-02-26 12:37:10,214 INFO session_session_1768931690286_p2zzbtd4e: ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-02-26 12:37:10,214 WARNING session_session_1768931690286_p2zzbtd4e: ⚠️ config.json не найден
+2026-02-26 12:37:10,218 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:37:10] "GET /api/load-config?session_id=session_1768931690286_p2zzbtd4e HTTP/1.1" 200 -
+2026-02-26 12:37:10,727 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): orderconfirmer-api.safiadelivery.com:443
+2026-02-26 12:37:11,403 DEBUG urllib3.connectionpool: https://orderconfirmer-api.safiadelivery.com:443 "GET /api/menu/Menus HTTP/1.1" 200 None
+2026-02-26 12:37:12,089 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:37:12] "POST /api/get-menu-items HTTP/1.1" 200 -
+2026-02-26 12:37:24,674 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): api.telegram.org:443
+2026-02-26 12:37:25,290 DEBUG urllib3.connectionpool: https://api.telegram.org:443 "POST /bot8116036894:AAEy8xS4vxxNd9nSzJUXZL92C07ohEZGVeA/sendMessage HTTP/1.1" 200 833
+2026-02-26 12:37:25,297 INFO werkzeug: 127.0.0.1 - - [26/Feb/2026 12:37:25] "POST /api/notify-telegram HTTP/1.1" 200 -
