@@ -1,0 +1,218 @@
+/* Stage 1 specific styles */
+
+.stage1-container {
+    display: grid;
+    gap: 40px;
+}
+
+.upload-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 0.9em;
+    color: var(--gray-color);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--light-color);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--light-color);
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+.file-icon {
+    font-size: 2em;
+}
+
+.file-details {
+    flex: 1;
+}
+
+.file-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 4px;
+}
+
+.file-size {
+    font-size: 0.85em;
+    color: var(--gray-color);
+}
+
+.remove-file {
+    padding: 8px 12px;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background 0.3s ease;
+}
+
+.remove-file:hover {
+    background: #c0392b;
+}
+
+/* Table animations */
+.table-row {
+    animation: slideIn 0.3s ease;
+}
+
+.table-row:nth-child(even) {
+    animation-delay: 0.05s;
+}
+
+.table-row:nth-child(3n) {
+    animation-delay: 0.1s;
+}
+
+/* Highlight rows where sent/delivered quantities mismatch */
+tr.row-warning td {
+    background: #ff000078 !important;
+}
+
+tr.row-warning:hover td {
+    background: #ff000078 !important;
+}
+
+/* Input validation states */
+.input-wrapper {
+    position: relative;
+}
+
+.input-error-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--danger-color);
+    font-size: 1.2em;
+    display: none;
+}
+
+.cell-input.error + .input-error-icon {
+    display: block;
+}
+
+/* Loading states */
+.loading-spinner {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.loading-text {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Success checkmark */
+.success-icon {
+    color: var(--success-color);
+    font-size: 1.5em;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray-color);
+}
+
+/* Table layout for Stage1 */
+.table-wrapper {
+    overflow-x: auto;
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* allow columns to size to content so headers fit */
+}
+.data-table thead th {
+    background: #2f3e46;
+    color: #ffd166;
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+}
+.data-table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.data-table .col-num { width: 56px; text-align: center; }
+.data-table .col-sku { width: 160px; }
+.data-table .col-name { min-width: 200px; }
+.data-table .col-qty-sent, .data-table .col-qty-delivered {
+    width: 120px; text-align: center; font-weight: 600;
+}
+
+/* Make rows more readable */
+.data-table tbody tr:nth-child(odd) td { background: #fff; }
+.data-table tbody tr:nth-child(even) td { background: #fafafa; }
+
+@media (max-width: 720px) {
+    .data-table thead th, .data-table tbody td { font-size: 13px; padding: 8px; }
+    .data-table .col-sku { width: 120px; }
+    .data-table .col-qty-sent, .data-table .col-qty-delivered, .data-table .col-qty-invoice { width: 90px; }
+}
+
+.empty-state-icon {
+    font-size: 3em;
+    margin-bottom: 16px;
+}
+
+.empty-state-text {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.empty-state-subtext {
+    font-size: 0.9em;
+}
+
+.branch-card {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.branch-card--sells {
+    background: #f0f8ff;
+    border-left: 4px solid #667eea;
+}
+
+.branch-card--sdoba {
+    background: #fff7e6;
+    border-left: 4px solid #f39c12;
+}

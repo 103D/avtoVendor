@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Лассио - Управление товарами</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('main.favicon') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stage1.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>📊 Управление товарами</h1>
+      </header>
+
+      <main class="main-content">
+        <!-- Форма логина -->
+        <section class="stage-section" id="login-section">
+          <div
+            style="
+              background: #f9f9f9;
+              padding: 20px;
+              border-radius: 5px;
+              max-width: 500px;
+              margin: 0 auto;
+            "
+          >
+            <h2 style="font-size: 18px; margin-bottom: 15px">🔐 Вход в систему</h2>
+
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                gap: 15px;
+                margin-bottom: 15px;
+                flex-direction: column;
+              "
+            >
+              <div>
+                <label for="username" style="display: block; margin-bottom: 5px; font-weight: 500"
+                  >Логин:</label
+                >
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Введите логин"
+                  style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px"
+                />
+              </div>
+              <div>
+                <label for="password" style="display: block; margin-bottom: 5px; font-weight: 500"
+                  >Пароль:</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Введите пароль"
+                  style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px"
+                />
+              </div>
+            </div>
+
+            <button
+              onclick="stage1.authenticate()"
+              style="
+                background: #667eea;
+                color: white;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: 500;
+              "
+            >
+              🔐 Вход
+            </button>
+
+            <div id="loginStatus" style="margin-top: 10px"></div>
+          </div>
+        </section>
+
+        <!-- Загрузка файла (скрыто до логина) -->
+        <section class="stage-section" id="upload-section" style="display: none">
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <h3>Перетащите файл сюда</h3>
+            <p>или нажмите для выбора</p>
+            <input type="file" id="fileInput" accept=".xlsx,.xls,.xlsm,.docx" multiple hidden />
+          </div>
+          <div id="uploadStatus" class="upload-status" style="display: none"></div>
+        </section>
+
+        <!-- Обработка файла -->
+        <section class="stage-section" id="transform-section" style="display: none">
+          <div
+            style="
+              margin-bottom: 15px;
+              background: #f0f8ff;
+              padding: 15px;
+              border-radius: 5px;
+              border-left: 4px solid #667eea;
+            "
+          >
+            <label style="display: flex; align-items: center; cursor: pointer; font-size: 15px">
+              <input
+                type="radio"
+                name="branchTarget"
+                value="together"
+                checked
+                style="width: 18px; height: 18px; margin-right: 10px; cursor: pointer"
+              />
+              <span style="font-weight: 500">🔄 Режим "Разом"</span>
+            </label>
+            <p style="margin: 8px 0 0 28px; font-size: 13px; color: #666; line-height: 1.5">
+              Суммирует количества по всем документам в одну общую позицию — удобно, когда нужно
+              применить одно количество для всех (режим «Разом»).
+            </p>
+          </div>
+          <div class="branch-card branch-card--sdoba">
+            <label style="display: flex; align-items: center; cursor: pointer; font-size: 15px">
+              <input
+                type="radio"
+                name="branchTarget"
+                value="radix"
+                style="width: 18px; height: 18px; margin-right: 10px; cursor: pointer"
+              />
+              <span style="font-weight: 500">🔄 Режим "По отдельности"</span>
+            </label>
+            <p style="margin: 8px 0 0 28px; font-size: 13px; color: #666; line-height: 1.5">
+              Сохраняет количество отдельно для каждой позиции и документа — не суммирует значения
+              между документами (режим «По отдельности»).
+            </p>
+          </div>
+          <button id="transformBtn" class="btn btn-primary">⚙️ Обработать</button>
+          <div id="transformStatus" class="transform-status" style="display: none"></div>
+        </section>
+
+        <!-- Таблица -->
+        <section class="stage-section" id="table-section" style="display: none">
+          <div class="table-wrapper">
+            <table id="dataTable" class="data-table">
+              <thead>
+                <tr>
+                  <th class="col-num">#</th>
+                  <th class="col-sku">SKU</th>
+                  <th class="col-name">Название</th>
+                  <th class="col-qty-sent">Отправлено</th>
+                  <th class="col-qty-delivered">Доставлено</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="table-stats">
+            <p>
+              Всего: <strong id="totalItems">0</strong> | Заполнено:
+              <strong id="filledItems">0</strong> / <strong id="totalItemsClone">0</strong>
+            </p>
+          </div>
+
+          <div class="button-group">
+            <button id="validateBtn" class="btn btn-primary">✓ Продолжить</button>
+          </div>
+
+          <div id="validationErrors" class="validation-errors" style="display: none"></div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Anti-Cache Script -->
+    <script>
+      // Очищаем LocalStorage, SessionStorage и устанавливаем флаг версии
+      try {
+        const VERSION = '20251226-v3';
+        const lastVersion = localStorage.getItem('app_version');
+
+        if (lastVersion !== VERSION) {
+          console.log('🔄 Версия приложения обновлена, очищаем кеш...');
+          // Сохраняем важные данные перед очисткой
+          const jwtToken = localStorage.getItem('jwtToken');
+          const sessionId = localStorage.getItem('sessionId');
+
+          localStorage.clear();
+          sessionStorage.clear();
+
+          // Восстанавливаем важные данные
+          if (jwtToken) localStorage.setItem('jwtToken', jwtToken);
+          if (sessionId) localStorage.setItem('sessionId', sessionId);
+          localStorage.setItem('app_version', VERSION);
+        }
+      } catch (e) {
+        console.warn('Не удалось очистить хранилище:', e);
+      }
+    </script>
+
+    <script>
+      (function () {
+        try {
+          if (!window.__disable_debug_logs) {
+            window.__disable_debug_logs = true;
+            console._log = console.log;
+            console._warn = console.warn;
+            console._error = console.error;
+            console.log = function () {};
+            console.warn = function () {};
+            console.error = function () {};
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script src="{{ url_for('static', filename='js/stage1.js') }}?t={{ range(1000000, 9999999) | random }}"></script>
+    <script>
+      (function () {
+        var warnOnClose = true;
+        window.addEventListener('beforeunload', function (e) {
+          if (!warnOnClose) return;
+          var message = 'Закрытие вкладки остановит локальный сервер. Вы уверены?';
+          e.preventDefault();
+          e.returnValue = message;
+          return message;
+        });
+        window.__disableServerCloseWarning = function () {
+          warnOnClose = false;
+        };
+        window.__enableServerCloseWarning = function () {
+          warnOnClose = true;
+        };
+      })();
+    </script>
+  </body>
+</html>
