@@ -283,18 +283,6 @@ def transform_file():
         
         session['transformed_data'] = all_data
         session['document_numbers'] = doc_numbers
-        
-        # Удаляем временные файлы после успешной обработки
-        for file_path in uploaded_files:
-            try:
-                if os.path.exists(file_path):
-                    os.remove(file_path)
-                    print(f'   🗑️ Удален временный файл: {os.path.basename(file_path)}')
-            except Exception as e:
-                print(f'   ⚠️ Не удалось удалить {file_path}: {e}')
-        
-        # Очищаем список загруженных файлов
-        session['uploaded_files'] = []
         session.modified = True
         
         message = f'Обработано {len(all_data)} товаров из {len(uploaded_files)} файлов'
@@ -306,7 +294,7 @@ def transform_file():
         print(f'✅ Итого обработано: {len(all_data)} товаров из {len(uploaded_files)} файлов')
         if doc_numbers:
             print(f'   Номера документов: {", ".join(doc_numbers)}')
-        print(f'   Список файлов очищен, новый размер: {len(session.get("uploaded_files", []))}\n')
+        print()
         
         return jsonify({
             'success': True, 

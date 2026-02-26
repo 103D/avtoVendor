@@ -91,13 +91,6 @@ class Stage2Manager {
     }
 
     notifyTelegram(action) {
-        // don't attempt Telegram notifications in local dev to avoid errors
-        const host = window.location.hostname;
-        if (host === '127.0.0.1' || host === 'localhost') {
-            console.log('ℹ️ Skipping Telegram notify in local environment');
-            return;
-        }
-
         const login = this.getAccountLogin();
         const docs = this.getDocumentNumbers();
         const payload = {
@@ -643,7 +636,7 @@ class Stage2Manager {
                         btnComments.id = 'btnComments';
                         btnComments.textContent = '📝 Перейти к комментариям';
                         btnComments.style.marginLeft = '10px';
-                        btnComments.onclick = () => this.generateComments();
+                        btnComments.onclick = () => { this.notifyTelegram('comments'); this.generateComments(); };
                         btnGroup.appendChild(btnComments);
                     }
 
@@ -877,25 +870,36 @@ class Stage2Manager {
                 const hasWarning = tr && tr.classList.contains('row-warning');
                 
                 if (hasWarning || row.isNew) {
-                    let productName = row.name;
-                    if (this.invoiceNames && this.invoiceNames[row.sku]) {
-                        productName = this.invoiceNames[row.sku];
+                    // Читаем значение из 4-й ячейки (data-col="sent-diff")
+                    const sentDiffCell = tr ? tr.querySelector('[data-col="sent-diff"]') : null;
+                    const sentDiffValue = sentDiffCell ? parseFloat(sentDiffCell.textContent.trim()) : 0;
+                    const sentDiff = Number.isNaN(sentDiffValue) ? 0 : sentDiffValue;
+
+                    // Если sent_diff равен 0, строка не участвует в комментарии
+                    if (sentDiff === 0) {
+                        // Пропускаем — не добавляем в комментарии
+                    } else {
+                        let productName = row.name;
+                        if (this.invoiceNames && this.invoiceNames[row.sku]) {
+                            productName = this.invoiceNames[row.sku];
+                        }
+                        
+                        const docNum = row.document_number || 'Без документа';
+                        if (!changedByDocument[docNum]) {
+                            changedByDocument[docNum] = [];
+                        }
+                        
+                        changedByDocument[docNum].push({
+                            name: productName,
+                            factQty: newQty,
+                            invoiceQty: originalInvoiceQty,
+                            isNew: row.isNew || false,
+                            sentQty: row.qtn_sent,
+                            deliveredQty: row.qtn_delivered,
+                            sentDiff: sentDiff
+                        });
+                        commentedIndices.add(idx);
                     }
-                    
-                    const docNum = row.document_number || 'Без документа';
-                    if (!changedByDocument[docNum]) {
-                        changedByDocument[docNum] = [];
-                    }
-                    
-                    changedByDocument[docNum].push({
-                        name: productName,
-                        factQty: newQty,
-                        invoiceQty: originalInvoiceQty,
-                        isNew: row.isNew || false,
-                        sentQty: row.qtn_sent,
-                        deliveredQty: row.qtn_delivered
-                    });
-                    commentedIndices.add(idx);
                 }
             }
         });
@@ -948,8 +952,9 @@ class Stage2Manager {
             // Генерируем текст: номер документа вверху, потом расхождения
             let text = `Номер документа: ${docNum}\n\n`;
             items.forEach(item => {
-                // Выводим все расхождения
-                const line = `${item.name} по факту ${item.factQty}, по накладной ${item.invoiceQty}.`;
+                // Выводим все расхождения: по факту = qtn_invoice + sent_diff (числовая сумма)
+                const factDisplay = item.invoiceQty + item.sentDiff;
+                const line = `${item.name} по факту ${factDisplay}, по накладной ${item.invoiceQty}.`;
 
                 if (
                     this.isExordDeliveredMode &&
