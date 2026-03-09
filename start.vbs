@@ -11,10 +11,6 @@ Set fso = CreateObject("Scripting.FileSystemObject")
 
 scriptDir = fso.GetParentFolderName(WScript.ScriptFullName)
 shell.CurrentDirectory = scriptDir
-<<<<<<< HEAD
-
-=======
->>>>>>> 1d47e07 (0303)
 	' Запускаем PowerShell-скрипт в видимом окне (чтобы показывать консоль)
 	fullCmd = "powershell -NoProfile -ExecutionPolicy Bypass -File " & Chr(34) & scriptDir & "\start_with_browser.ps1" & Chr(34) & " -AutoStopSeconds 6"
 	' Используем WindowStyle=1 (видимое окно) — параметр третьим аргументом оставляем False (не ждать)
