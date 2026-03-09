@@ -10,12 +10,25 @@ def create_app():
     static_folder = str(base_dir / 'static')
     
     app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+<<<<<<< HEAD
     
     # Конфигурация
     app.config['SECRET_KEY'] = 'lassio-secret-key-2025'
     app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(__file__), '..', 'uploads')
     app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB max file size
     app.config['SESSION_TYPE'] = 'filesystem'
+=======
+
+    is_vercel = os.environ.get('VERCEL') == '1'
+    writable_root = Path('/tmp') if is_vercel else base_dir
+    
+    # Конфигурация
+    app.config['SECRET_KEY'] = 'lassio-secret-key-2025'
+    app.config['UPLOAD_FOLDER'] = str(writable_root / 'uploads')
+    app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB max file size
+    app.config['SESSION_TYPE'] = 'filesystem'
+    app.config['SESSION_FILE_DIR'] = str(writable_root / 'flask_session')
+>>>>>>> 1d47e07 (0303)
     
     Session(app)
     
@@ -39,5 +52,9 @@ def create_app():
     
     # Создание папки uploads если её нет
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+<<<<<<< HEAD
+=======
+    os.makedirs(app.config['SESSION_FILE_DIR'], exist_ok=True)
+>>>>>>> 1d47e07 (0303)
     
     return app
