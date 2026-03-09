@@ -215,23 +215,5 @@
       })();
     </script>
     <script src="{{ url_for('static', filename='js/stage1.js') }}?t={{ range(1000000, 9999999) | random }}"></script>
-    <script>
-      (function () {
-        var warnOnClose = true;
-        window.addEventListener('beforeunload', function (e) {
-          if (!warnOnClose) return;
-          var message = 'Закрытие вкладки остановит локальный сервер. Вы уверены?';
-          e.preventDefault();
-          e.returnValue = message;
-          return message;
-        });
-        window.__disableServerCloseWarning = function () {
-          warnOnClose = false;
-        };
-        window.__enableServerCloseWarning = function () {
-          warnOnClose = true;
-        };
-      })();
-    </script>
   </body>
 </html>

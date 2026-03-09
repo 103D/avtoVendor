@@ -676,22 +676,4 @@
     </script>
     <script src="{{ url_for('static', filename='js/radix.js') }}?t={{ range(1000000, 9999999) | random }}"></script>
   </body>
-  <script>
-    (function () {
-      var warnOnClose = true;
-      window.addEventListener('beforeunload', function (e) {
-        if (!warnOnClose) return;
-        var message = 'Закрытие вкладки остановит локальный сервер. Вы уверены?';
-        e.preventDefault();
-        e.returnValue = message;
-        return message;
-      });
-      window.__disableServerCloseWarning = function () {
-        warnOnClose = false;
-      };
-      window.__enableServerCloseWarning = function () {
-        warnOnClose = true;
-      };
-    })();
-  </script>
 </html>
