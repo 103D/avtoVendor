@@ -14,6 +14,7 @@ SessionManager - управление данными сессий
 """
 
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional, Dict
@@ -23,15 +24,17 @@ import logging
 class SessionManager:
     """Менеджер для управления данными сессий"""
     
-    def __init__(self, session_id: str, base_path: str = "sessions"):
+    def __init__(self, session_id: str, base_path: Optional[str] = None):
         """
         Инициализация менеджера сессии
         
         Args:
             session_id: уникальный идентификатор сессии
-            base_path: базовая папка для сессий (по умолчанию "sessions")
+            base_path: базовая папка для сессий (по умолчанию /tmp/sessions на Vercel)
         """
         self.session_id = session_id
+        if base_path is None:
+            base_path = "/tmp/sessions" if os.environ.get("VERCEL") == "1" else "sessions"
         self.base_path = Path(base_path)
         self.session_dir = self.base_path / session_id
         
