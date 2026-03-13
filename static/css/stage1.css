@@ -187,6 +187,46 @@ tr.row-warning:hover td {
     .data-table .col-qty-sent, .data-table .col-qty-delivered, .data-table .col-qty-invoice { width: 90px; }
 }
 
+@media (max-width: 1024px) {
+    .branch-card {
+        padding: 12px;
+    }
+
+    .table-stats {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 640px) {
+    .stage1-container {
+        gap: 24px;
+    }
+
+    .file-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .remove-file {
+        width: 100%;
+        text-align: center;
+    }
+
+    .data-table .col-name {
+        min-width: 170px;
+    }
+
+    .data-table .col-sku {
+        width: 110px;
+    }
+
+    .data-table .col-qty-sent,
+    .data-table .col-qty-delivered {
+        width: 80px;
+        font-size: 12px;
+    }
+}
+
 .empty-state-icon {
     font-size: 3em;
     margin-bottom: 16px;

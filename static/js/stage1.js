@@ -1,6 +1,7 @@
 class Stage1 {
     constructor() {
         this.uploadedFile = null;
+        this.pendingFiles = [];
         this.transformedData = null;
         this.exordMode = false;
         this.exordColumn = 'отправлено';
@@ -94,6 +95,11 @@ class Stage1 {
     }
 
     handleMultipleFiles(files) {
+        if (!files || files.length === 0) {
+            this.showStatus('uploadStatus', 'Файлы не выбраны', 'error');
+            return;
+        }
+
         // Получаем расширение первого файла
         const firstExt = '.' + files[0].name.split('.').pop().toLowerCase();
         if (!['.xlsx', '.xls', '.xlsm', '.docx'].includes(firstExt)) {
@@ -114,45 +120,13 @@ class Stage1 {
             this.showStatus('uploadStatus', `❌ Все файлы должны быть одного расширения (.${firstExt.substring(1)})! Ошибочные: ${invalidFiles.join(', ')}`, 'error');
             return;
         }
-        
-        // Загружаем все файлы
-        console.log(`📁 Начинаем загрузку ${files.length} файлов...`);
-        this.showStatus('uploadStatus', `<div class="status-message"><div class="spinner"></div><span>Загрузка ${files.length} файлов...</span></div>`, 'loading');
-        this.uploadMultipleFiles(files, 0, [], true);
-    }
-    
-    uploadMultipleFiles(files, index, uploadedFiles, resetBatch = false) {
-        if (index >= files.length) {
-            // Все файлы загружены
-            this.uploadedFiles = uploadedFiles;
-            const fileList = uploadedFiles.map((f, i) => `${i + 1}. ${f}`).join('<br>');
-            this.showStatus('uploadStatus', `✓ Загружено ${uploadedFiles.length} файлов:<br>${fileList}`, 'success');
-            document.getElementById('transform-section').style.display = 'block';
-            return;
-        }
-        
-        const file = files[index];
-        const fd = new FormData();
-        fd.append('file', file);
-        if (resetBatch && index === 0) {
-            fd.append('reset', '1');
-        }
-        
-        fetch('/api/upload-file', { method: 'POST', body: fd })
-            .then(r => r.json())
-            .then(d => {
-                if (d.success) {
-                    uploadedFiles.push(file.name);
-                    console.log(`✓ Файл ${index + 1} загружен: ${file.name}`);
-                    // Загружаем следующий файл
-                    this.uploadMultipleFiles(files, index + 1, uploadedFiles, false);
-                } else {
-                    throw new Error(`Ошибка загрузки ${file.name}: ${d.error}`);
-                }
-            })
-            .catch(e => {
-                this.showStatus('uploadStatus', `❌ ${e.message}`, 'error');
-            });
+
+        // Файлы храним только в памяти браузера до нажатия "Обработать"
+        this.pendingFiles = Array.from(files);
+        this.uploadedFiles = this.pendingFiles.map((file) => file.name);
+        const fileList = this.uploadedFiles.map((f, i) => `${i + 1}. ${f}`).join('<br>');
+        this.showStatus('uploadStatus', `✓ Выбрано ${this.uploadedFiles.length} файлов:<br>${fileList}`, 'success');
+        document.getElementById('transform-section').style.display = 'block';
     }
 
     handleFile(file) {
@@ -161,26 +135,19 @@ class Stage1 {
             this.showStatus('uploadStatus', 'Допускаются Excel (.xlsx, .xls, .xlsm) и Word (.docx) файлы', 'error');
             return;
         }
-        
-        const fd = new FormData();
-        fd.append('file', file);
-        this.showStatus('uploadStatus', '<div class="status-message"><div class="spinner"></div><span>Загрузка...</span></div>', 'loading');
 
-        fetch('/api/upload-file', { method: 'POST', body: fd })
-            .then(r => r.json())
-            .then(d => {
-                if (d.success) {
-                    this.uploadedFile = file.name;
-                    this.showStatus('uploadStatus', `✓ Файл загружен`, 'success');
-                    document.getElementById('transform-section').style.display = 'block';
-                } else {
-                    this.showStatus('uploadStatus', d.error, 'error');
-                }
-            })
-            .catch(e => this.showStatus('uploadStatus', 'Ошибка: ' + e.message, 'error'));
+        this.pendingFiles = [file];
+        this.uploadedFile = file.name;
+        this.showStatus('uploadStatus', '✓ Файл выбран и готов к обработке', 'success');
+        document.getElementById('transform-section').style.display = 'block';
     }
 
     transformFile() {
+        if (!this.pendingFiles || this.pendingFiles.length === 0) {
+            this.showStatus('transformStatus', 'Сначала выберите файлы для обработки', 'error');
+            return;
+        }
+
         const btn = document.getElementById('transformBtn');
         btn.disabled = true;
         const branchChoice = document.querySelector('input[name="branchTarget"]:checked');
@@ -197,15 +164,16 @@ class Stage1 {
         if (exordMode) {
             console.log('📋 Выбранный столбец:', exordColumn);
         }
+
+        const formData = new FormData();
+        this.pendingFiles.forEach((file) => formData.append('files[]', file));
+        formData.append('exord_mode', exordMode ? '1' : '0');
+        formData.append('exord_column', exordColumn);
         
         this.showStatus('transformStatus', '<div class="status-message"><div class="spinner"></div><span>Обработка файлов...</span></div>', 'loading');
         fetch('/api/transform-file', { 
             method: 'POST', 
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                exord_mode: exordMode,
-                exord_column: exordColumn
-            })
+            body: formData
         })
             .then(r => r.json())
             .then(d => {

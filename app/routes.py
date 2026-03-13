@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, request, jsonify, session, current_app, send_from_directory
-import os, json, subprocess, sys
+from flask import Blueprint, render_template, request, jsonify, session, send_from_directory
+import os, json, subprocess, sys, tempfile
 from pathlib import Path
 import requests
 from datetime import datetime
@@ -130,7 +130,7 @@ def get_token():
 
 @api_bp.route('/upload-file', methods=['POST'])
 def upload_file():
-    """Temporary file handling - files are processed and then deleted"""
+    """Validate uploaded file metadata without persisting document contents."""
     try:
         if 'file' not in request.files:
             return jsonify({'success': False, 'error': 'Файл не найден'}), 400
@@ -141,25 +141,19 @@ def upload_file():
         file_ext = Path(file.filename).suffix.lower()
         if file_ext not in {'.xlsx', '.xls', '.xlsm', '.docx'}:
             return jsonify({'success': False, 'error': 'Допускаются только Excel (.xlsx, .xls, .xlsm) и Word (.docx) файлы'}), 400
-        
-        # Сбрасываем список загруженных файлов при новом батче
+
+        # Сбрасываем список имён файлов при новом батче
         if request.form.get('reset') == '1':
-            session['uploaded_files'] = []
+            session['uploaded_file_names'] = []
             session.modified = True
 
-        # Сохраняем во временную папку (будет удален после обработки)
-        upload_folder = Path(current_app.config['UPLOAD_FOLDER'])
-        upload_folder.mkdir(parents=True, exist_ok=True)
-        file_path = upload_folder / file.filename
-        file.save(str(file_path))
-        
-        # Сохраняем список файлов для обработки
-        if 'uploaded_files' not in session:
-            session['uploaded_files'] = []
-        session['uploaded_files'].append(str(file_path))
+        if 'uploaded_file_names' not in session:
+            session['uploaded_file_names'] = []
+        session['uploaded_file_names'].append(file.filename)
         session['original_filename'] = file.filename
         session.modified = True
-        print(f'📤 Файл готов к обработке: {file.filename}')
+
+        print(f'📤 Файл принят без сохранения: {file.filename}')
         return jsonify({'success': True, 'filename': file.filename}), 200
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
@@ -167,64 +161,51 @@ def upload_file():
 @api_bp.route('/transform-file', methods=['POST'])
 def transform_file():
     try:
-        # Получаем флаг экзорд и выбранный столбец из запроса
-        data = request.get_json() or {}
-        exord_mode = data.get('exord_mode', False)
-        exord_column = data.get('exord_column', 'отправлено')  # По умолчанию "отправлено"
-        
-        # Получаем список файлов для обработки
-        uploaded_files = session.get('uploaded_files', [])
+        # Поддерживаем JSON и multipart/form-data
+        is_multipart = bool(request.files)
+        if is_multipart:
+            exord_mode = str(request.form.get('exord_mode', 'false')).lower() in {'1', 'true', 'yes', 'on'}
+            exord_column = request.form.get('exord_column', 'отправлено')
+        else:
+            data = request.get_json() or {}
+            exord_mode = data.get('exord_mode', False)
+            exord_column = data.get('exord_column', 'отправлено')
+
+        uploaded_files = request.files.getlist('files[]') if is_multipart else []
         print(f'\n🔍 /transform-file запрос:')
         print(f'   Файлов в сессии: {len(uploaded_files)}')
         print(f'   Режим Экзорд: {"ВКЛЮЧЕН" if exord_mode else "ВЫКЛЮЧЕН"}')
         if exord_mode:
             print(f'   Столбец Экзорд: {exord_column}')
-        
-        if not uploaded_files:
-            # Для обратной совместимости - пытаемся использовать старый ключ
-            single_file = session.get('uploaded_file')
-            if single_file:
-                uploaded_files = [single_file]
-            else:
-                # Если в сессии нет файлов, попробуем принять файлы из текущего запроса (multipart/form-data)
-                if request.files:
-                    upload_folder = Path(current_app.config['UPLOAD_FOLDER'])
-                    upload_folder.mkdir(parents=True, exist_ok=True)
-                    uploaded_files = []
-                    for fkey in request.files:
-                        f = request.files.get(fkey)
-                        if not f or not getattr(f, 'filename', None):
-                            continue
-                        filename = f.filename
-                        fp = upload_folder / filename
-                        f.save(str(fp))
-                        uploaded_files.append(str(fp))
 
-                    if uploaded_files:
-                        # Сохраняем в сессии для совместимости с остальным кодом
-                        session['uploaded_files'] = uploaded_files
-                        session['original_filename'] = os.path.basename(uploaded_files[0])
-                        session.modified = True
-                    else:
-                        return jsonify({'success': False, 'error': 'Файлы не загружены'}), 400
-                else:
-                    return jsonify({'success': False, 'error': 'Файлы не загружены'}), 400
+        if not uploaded_files:
+            return jsonify({'success': False, 'error': 'Файлы не загружены'}), 400
         
         all_data = []
         doc_numbers = []
         errors = []
         
         # Обрабатываем каждый файл
-        for file_path in uploaded_files:
-            filename = os.path.basename(file_path)
-            if not os.path.exists(file_path):
-                errors.append(f'Файл не найден: {filename}')
-                print(f'   ❌ Файл не найден: {filename}')
+        for uploaded_file in uploaded_files:
+            if not uploaded_file or not getattr(uploaded_file, 'filename', None):
                 continue
+
+            filename = uploaded_file.filename
+            file_ext = Path(filename).suffix.lower()
+            if file_ext not in {'.xlsx', '.xls', '.xlsm', '.docx'}:
+                errors.append(f'Неподдерживаемый формат файла: {filename}')
+                print(f'   ❌ Неподдерживаемый формат: {filename}')
+                continue
+
+            temp_path = None
             
             try:
                 print(f'   ⚙️ Обработка: {filename}')
-                cmd = [sys.executable, str(TRANSFORM_HANDLER), '--source', file_path]
+                with tempfile.NamedTemporaryFile(delete=False, suffix=file_ext) as temp_file:
+                    uploaded_file.save(temp_file)
+                    temp_path = temp_file.name
+
+                cmd = [sys.executable, str(TRANSFORM_HANDLER), '--source', temp_path]
                 if exord_mode:
                     cmd.append('--exord')
                     cmd.append('--exord-column')
@@ -276,6 +257,12 @@ def transform_file():
             except subprocess.TimeoutExpired:
                 errors.append(f'Время обработки истекло для {filename}')
                 print(f'   ⏱️ Таймаут обработки {filename}')
+            finally:
+                if temp_path and os.path.exists(temp_path):
+                    try:
+                        os.remove(temp_path)
+                    except Exception:
+                        pass
         
         if not all_data and errors:
             print(f'❌ Ошибка: нет обработанных данных\n')
@@ -283,6 +270,8 @@ def transform_file():
         
         session['transformed_data'] = all_data
         session['document_numbers'] = doc_numbers
+        session.pop('uploaded_files', None)
+        session.pop('uploaded_file', None)
         session.modified = True
         
         message = f'Обработано {len(all_data)} товаров из {len(uploaded_files)} файлов'

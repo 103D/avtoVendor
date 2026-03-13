@@ -321,6 +321,54 @@
           font-size: 13px;
           padding: 8px 0;
       }
+
+        @media (max-width: 1024px) {
+          body {
+            margin: 10px;
+          }
+
+          .header {
+            padding: 32px 14px;
+          }
+
+          .header h1 {
+            font-size: 1.85em;
+          }
+
+          .main-content {
+            padding: 20px 12px;
+          }
+        }
+
+        @media (max-width: 700px) {
+          body {
+            margin: 6px;
+          }
+
+          .header h1 {
+            font-size: 1.45em;
+          }
+
+          .button-group {
+            flex-direction: column;
+          }
+
+          .button-group button,
+          button {
+            width: 100%;
+            margin: 6px 0;
+          }
+
+          th,
+          td {
+            padding: 9px;
+            font-size: 12px;
+          }
+
+          #login-section > div {
+            grid-template-columns: 1fr !important;
+          }
+        }
     </style>
   </head>
   <body>
