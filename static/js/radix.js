@@ -470,11 +470,69 @@ class Stage2Manager {
         
         console.log(`=== КОНЕЦ displayTable() - отображено ${allRows.length} строк ===\n`);
         
+        // Применяем фильтр если есть
+        const searchInput = document.getElementById('tableSearch');
+        const currentSearch = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        if (currentSearch) {
+            this.filterTable(currentSearch);
+        }
+        
         document.getElementById('resultsTable').style.display = 'block';
         const btnComments = document.getElementById('btnCommentsOnly');
         if (btnComments) btnComments.style.display = 'inline-block';
         const btnAdd = document.getElementById('btnAddProduct');
         if (btnAdd) btnAdd.style.display = 'inline-block';
+    }
+
+    filterTable(searchTerm) {
+        const tbody = document.getElementById('tableBody');
+        if (!tbody) return;
+        
+        searchTerm = searchTerm.toLowerCase().trim();
+        const rows = tbody.querySelectorAll('tr');
+        let visibleCount = 0;
+        let totalCount = 0;
+        
+        rows.forEach(row => {
+            const skuCell = row.querySelector('td:nth-child(2)');
+            const nameCell = row.querySelector('td:nth-child(3)');
+            
+            const sku = skuCell ? skuCell.textContent.toLowerCase() : '';
+            const name = nameCell ? nameCell.textContent.toLowerCase() : '';
+            
+            // Убираем HTML теги из названия для поиска
+            const cleanName = name.replace(/<[^>]*>/g, '');
+            
+            if (!searchTerm || sku.includes(searchTerm) || cleanName.includes(searchTerm)) {
+                row.style.display = '';
+                visibleCount++;
+            } else {
+                row.style.display = 'none';
+            }
+            totalCount++;
+        });
+        
+        // Обновляем счётчик
+        const countEl = document.getElementById('filterResultCount');
+        if (countEl) {
+            if (searchTerm) {
+                countEl.textContent = `Показано ${visibleCount} из ${totalCount} товаров`;
+            } else {
+                countEl.textContent = '';
+            }
+        }
+        
+        // Обновляем номер строки для видимых строк
+        let visibleIndex = 1;
+        rows.forEach(row => {
+            if (row.style.display !== 'none') {
+                const firstCell = row.querySelector('td:first-child');
+                if (firstCell) {
+                    firstCell.textContent = visibleIndex;
+                    visibleIndex++;
+                }
+            }
+        });
     }
 
     updateFactInputHighlight(input) {
@@ -1449,6 +1507,18 @@ class Stage2Manager {
             }
         }
 
+        // Сначала сохраняем значения всех текущих вводов перед перерисовкой
+        const savedValues = {};
+        if (this.currentRows) {
+            this.currentRows.forEach((row, idx) => {
+                const input = document.getElementById(`qty_${idx}`);
+                if (input) {
+                    const key = `${row.sku}|${row.document_number || ''}`;
+                    savedValues[key] = input.value;
+                }
+            });
+        }
+
         const newProduct = {
             sku: this.selectedProduct.sku,
             name: this.selectedProduct.name,
@@ -1470,6 +1540,19 @@ class Stage2Manager {
         // Перерисовываем таблицу с новым товаром
         const baseRows = this.currentRows ? this.currentRows.filter(r => !r.isNew) : [];
         this.displayTable(baseRows);
+
+        // Восстанавливаем сохраненные значения после перерисовки
+        if (this.currentRows) {
+            this.currentRows.forEach((row, idx) => {
+                const input = document.getElementById(`qty_${idx}`);
+                if (input) {
+                    const key = `${row.sku}|${row.document_number || ''}`;
+                    if (savedValues[key] !== undefined) {
+                        input.value = savedValues[key];
+                    }
+                }
+            });
+        }
     }
 
     // duplicate generateComments removed — using the primary implementation above

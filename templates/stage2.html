@@ -430,6 +430,23 @@
 
         <div id="resultsTable">
           <h2>📦 Товары</h2>
+          <div class="table-filter-wrapper">
+            <input
+              type="text"
+              id="tableSearch"
+              placeholder="🔍 Поиск по SKU или названию..."
+              oninput="stage2Manager.filterTable(this.value)"
+              style="
+                width: 100%;
+                padding: 10px 15px;
+                border: 2px solid var(--border-color);
+                border-radius: 6px;
+                font-size: 14px;
+                margin-bottom: 10px;
+              "
+            />
+            <span id="filterResultCount" style="font-size: 12px; color: #666"></span>
+          </div>
           <div class="table-wrapper">
             <table>
               <thead>

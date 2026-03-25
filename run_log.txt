@@ -1379,3 +1379,97 @@
 2026-03-12 05:14:45,004 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): api.telegram.org:443
 2026-03-12 05:14:45,643 DEBUG urllib3.connectionpool: https://api.telegram.org:443 "POST /bot8116036894:AAEy8xS4vxxNd9nSzJUXZL92C07ohEZGVeA/sendMessage HTTP/1.1" 200 701
 2026-03-12 05:14:45,650 INFO werkzeug: 127.0.0.1 - - [12/Mar/2026 05:14:45] "POST /api/notify-telegram HTTP/1.1" 200 -
+2026-03-26 01:35:26,894 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.114:5000
+2026-03-26 01:35:26,895 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-03-26 01:35:26,897 INFO werkzeug:  * Restarting with stat
+2026-03-26 01:35:27,748 WARNING werkzeug:  * Debugger is active!
+2026-03-26 01:35:27,754 INFO werkzeug:  * Debugger PIN: 598-000-220
+2026-03-26 01:35:29,258 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:29] "GET / HTTP/1.1" 200 -
+2026-03-26 01:35:29,325 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:29] "GET /static/js/stage1.js?t=8277220 HTTP/1.1" 200 -
+2026-03-26 01:35:29,325 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:29] "GET /static/css/stage1.css HTTP/1.1" 200 -
+2026-03-26 01:35:29,327 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:29] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-26 01:35:30,231 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:30] "GET /favicon.ico HTTP/1.1" 200 -
+2026-03-26 01:35:32,721 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): orderconfirmer-api.safiadelivery.com:443
+2026-03-26 01:35:34,070 DEBUG urllib3.connectionpool: https://orderconfirmer-api.safiadelivery.com:443 "POST /api/account/token HTTP/1.1" 200 None
+2026-03-26 01:35:34,081 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:34] "POST /api/get-token HTTP/1.1" 200 -
+2026-03-26 01:35:48,777 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:48] "POST /api/transform-file HTTP/1.1" 200 -
+2026-03-26 01:35:50,452 INFO session_session_1768931690286_p2zzbtd4e: ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-03-26 01:35:50,454 INFO session_session_1768931690286_p2zzbtd4e: ✅ JSON сохранён: stage1_data.json
+2026-03-26 01:35:50,454 INFO session_session_1768931690286_p2zzbtd4e: ✅ Этап 1: 161 записей
+2026-03-26 01:35:50,456 INFO session_session_1768931690286_p2zzbtd4e: ✅ JSON сохранён: payloads.json
+2026-03-26 01:35:50,467 INFO session_session_1768931690286_p2zzbtd4e: 📊 Payloads: 161 записей
+2026-03-26 01:35:50,487 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:50] "POST /api/save-stage1-data HTTP/1.1" 200 -
+2026-03-26 01:35:50,762 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:50] "GET /stage2 HTTP/1.1" 200 -
+2026-03-26 01:35:50,824 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 01:35:50,825 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:50] "GET /static/js/stage2.js?t=2182318 HTTP/1.1" 200 -
+2026-03-26 01:35:50,858 INFO session_session_1768931690286_p2zzbtd4e: ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-03-26 01:35:50,859 WARNING session_session_1768931690286_p2zzbtd4e: ⚠️ config.json не найден
+2026-03-26 01:35:50,865 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:35:50] "GET /api/load-config?session_id=session_1768931690286_p2zzbtd4e HTTP/1.1" 200 -
+2026-03-26 01:35:51,365 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): orderconfirmer-api.safiadelivery.com:443
+2026-03-26 01:35:56,744 DEBUG urllib3.connectionpool: https://orderconfirmer-api.safiadelivery.com:443 "GET /api/menu/Menus HTTP/1.1" 200 None
+2026-03-26 01:36:00,363 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:36:00] "POST /api/get-menu-items HTTP/1.1" 200 -
+2026-03-26 01:36:22,164 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:36:22] "POST /api/search-products HTTP/1.1" 200 -
+2026-03-26 01:36:26,351 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:36:26] "POST /api/search-products HTTP/1.1" 200 -
+2026-03-26 01:36:27,385 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:36:27] "POST /api/search-products HTTP/1.1" 200 -
+2026-03-26 01:36:28,612 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:36:28] "POST /api/search-products HTTP/1.1" 200 -
+2026-03-26 01:38:19,487 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:38:19] "POST /api/search-products HTTP/1.1" 200 -
+2026-03-26 01:41:48,658 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.114:5000
+2026-03-26 01:41:48,659 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-03-26 01:41:48,660 INFO werkzeug:  * Restarting with stat
+2026-03-26 01:41:49,415 WARNING werkzeug:  * Debugger is active!
+2026-03-26 01:41:49,417 INFO werkzeug:  * Debugger PIN: 598-000-220
+2026-03-26 01:43:33,959 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:43:33] "GET / HTTP/1.1" 200 -
+2026-03-26 01:43:34,105 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:43:34] "[36mGET /static/css/stage1.css HTTP/1.1[0m" 304 -
+2026-03-26 01:43:34,106 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:43:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 01:43:34,110 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:43:34] "GET /static/js/stage1.js?t=4817278 HTTP/1.1" 200 -
+2026-03-26 01:43:35,743 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): orderconfirmer-api.safiadelivery.com:443
+2026-03-26 01:43:36,790 DEBUG urllib3.connectionpool: https://orderconfirmer-api.safiadelivery.com:443 "POST /api/account/token HTTP/1.1" 200 None
+2026-03-26 01:43:36,801 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:43:36] "POST /api/get-token HTTP/1.1" 200 -
+2026-03-26 01:43:41,191 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:43:41] "POST /api/transform-file HTTP/1.1" 200 -
+2026-03-26 01:45:25,523 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:25] "POST /api/transform-file HTTP/1.1" 200 -
+2026-03-26 01:45:28,420 INFO session_session_1768931690286_p2zzbtd4e: ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-03-26 01:45:28,424 INFO session_session_1768931690286_p2zzbtd4e: ✅ JSON сохранён: stage1_data.json
+2026-03-26 01:45:28,425 INFO session_session_1768931690286_p2zzbtd4e: ✅ Этап 1: 161 записей
+2026-03-26 01:45:28,431 INFO session_session_1768931690286_p2zzbtd4e: ✅ JSON сохранён: payloads.json
+2026-03-26 01:45:28,471 INFO session_session_1768931690286_p2zzbtd4e: 📊 Payloads: 161 записей
+2026-03-26 01:45:28,477 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:28] "POST /api/save-stage1-data HTTP/1.1" 200 -
+2026-03-26 01:45:28,962 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:28] "GET /stage2 HTTP/1.1" 200 -
+2026-03-26 01:45:29,013 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 01:45:29,014 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:29] "GET /static/js/stage2.js?t=5135236 HTTP/1.1" 200 -
+2026-03-26 01:45:29,046 INFO session_session_1768931690286_p2zzbtd4e: ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-03-26 01:45:29,047 WARNING session_session_1768931690286_p2zzbtd4e: ⚠️ config.json не найден
+2026-03-26 01:45:29,053 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:29] "GET /api/load-config?session_id=session_1768931690286_p2zzbtd4e HTTP/1.1" 200 -
+2026-03-26 01:45:29,547 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): orderconfirmer-api.safiadelivery.com:443
+2026-03-26 01:45:32,305 DEBUG urllib3.connectionpool: https://orderconfirmer-api.safiadelivery.com:443 "GET /api/menu/Menus HTTP/1.1" 200 None
+2026-03-26 01:45:36,607 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:36] "POST /api/get-menu-items HTTP/1.1" 200 -
+2026-03-26 01:45:52,058 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:52] "POST /api/search-products HTTP/1.1" 200 -
+2026-03-26 01:45:54,537 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:45:54] "POST /api/search-products HTTP/1.1" 200 -
+2026-03-26 01:46:36,872 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:46:36] "GET / HTTP/1.1" 200 -
+2026-03-26 01:46:36,940 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:46:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 01:46:36,941 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:46:36] "[36mGET /static/css/stage1.css HTTP/1.1[0m" 304 -
+2026-03-26 01:46:36,942 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:46:36] "GET /static/js/stage1.js?t=1528180 HTTP/1.1" 200 -
+2026-03-26 01:46:38,441 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): orderconfirmer-api.safiadelivery.com:443
+2026-03-26 01:46:39,520 DEBUG urllib3.connectionpool: https://orderconfirmer-api.safiadelivery.com:443 "POST /api/account/token HTTP/1.1" 200 None
+2026-03-26 01:46:39,527 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:46:39] "POST /api/get-token HTTP/1.1" 200 -
+2026-03-26 01:53:33,374 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:53:33] "POST /api/transform-file HTTP/1.1" 200 -
+2026-03-26 01:53:34,858 INFO session_session_1768931690286_p2zzbtd4e: ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-03-26 01:53:34,861 INFO session_session_1768931690286_p2zzbtd4e: ✅ JSON сохранён: stage1_data.json
+2026-03-26 01:53:34,862 INFO session_session_1768931690286_p2zzbtd4e: ✅ Этап 1: 161 записей
+2026-03-26 01:53:34,867 INFO session_session_1768931690286_p2zzbtd4e: ✅ JSON сохранён: payloads.json
+2026-03-26 01:53:34,899 INFO session_session_1768931690286_p2zzbtd4e: 📊 Payloads: 161 записей
+2026-03-26 01:53:34,907 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:53:34] "POST /api/save-stage1-data HTTP/1.1" 200 -
+2026-03-26 01:53:35,442 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:53:35] "GET /stage2 HTTP/1.1" 200 -
+2026-03-26 01:53:35,528 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:53:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 01:53:35,531 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:53:35] "GET /static/js/stage2.js?t=8855396 HTTP/1.1" 200 -
+2026-03-26 01:53:35,594 INFO session_session_1768931690286_p2zzbtd4e: ✅ Сессия инициализирована: session_1768931690286_p2zzbtd4e
+2026-03-26 01:53:35,595 WARNING session_session_1768931690286_p2zzbtd4e: ⚠️ config.json не найден
+2026-03-26 01:53:35,601 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:53:35] "GET /api/load-config?session_id=session_1768931690286_p2zzbtd4e HTTP/1.1" 200 -
+2026-03-26 01:53:36,111 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): orderconfirmer-api.safiadelivery.com:443
+2026-03-26 01:53:37,855 DEBUG urllib3.connectionpool: https://orderconfirmer-api.safiadelivery.com:443 "GET /api/menu/Menus HTTP/1.1" 200 None
+2026-03-26 01:53:38,605 INFO werkzeug: 127.0.0.1 - - [26/Mar/2026 01:53:38] "POST /api/get-menu-items HTTP/1.1" 200 -
