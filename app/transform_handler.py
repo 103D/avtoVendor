@@ -357,10 +357,10 @@ def extract_from_docx(file_path: str, exord_mode: bool = False, exord_column: st
         products.append({
             'sku': code,
             'name': name,
-            'qtn_invoice': quantity,
+            'qtn_invoice': quantity,  # Сохраняем дробные числа (2.5, 3.75 и т.д.) БЕЗ округления
             'qtn_fact': quantity,
-            'qtn_sent': sent_qty,
-            'qtn_delivered': delivered_qty,
+            'qtn_sent': sent_qty,  # Также может быть дробное число
+            'qtn_delivered': delivered_qty,  # Также может быть дробное число
             'document_number': default_doc_number
         })
     
@@ -605,10 +605,10 @@ def extract_from_excel(file_path: str, exord_mode: bool = False, exord_column: s
                 products.append({
                     'sku': sku,
                     'name': name,
-                    'qtn_invoice': quantity,
+                    'qtn_invoice': quantity,  # Сохраняем дробные числа (2.5, 3.75 и т.д.) БЕЗ округления
                     'qtn_fact': quantity,
-                    'qtn_sent': sent_qty,
-                    'qtn_delivered': delivered_qty,
+                    'qtn_sent': sent_qty,  # Также может быть дробное число
+                    'qtn_delivered': delivered_qty,  # Также может быть дробное число
                     'document_number': doc_number
                 })
             else:

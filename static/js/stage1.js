@@ -6,6 +6,7 @@ class Stage1 {
         this.exordMode = false;
         this.exordColumn = 'отправлено';
         this.sessionId = this.getOrCreateSessionId();
+        this.isNavigatingAway = false; // Флаг для отключения warning при переходе на следующий этап
         this.init();
     }
 
@@ -18,10 +19,44 @@ class Stage1 {
         return id;
     }
 
+    setupPageLeaveWarning() {
+        window.addEventListener('beforeunload', (event) => {
+            // Не показываем warning если происходит намеренный переход на следующий этап
+            if (this.isNavigatingAway) {
+                return;
+            }
+            
+            if (this.hasUnsavedData()) {
+                event.preventDefault();
+                event.returnValue = 'У вас есть несохраненные данные! Все загруженные файлы и обработанные данные будут потеряны при обновлении страницы.';
+                return event.returnValue;
+            }
+        });
+    }
+
+    hasUnsavedData() {
+        // Проверяем наличие загруженных файлов
+        if (this.pendingFiles && this.pendingFiles.length > 0) {
+            return true;
+        }
+
+        if (this.uploadedFiles && this.uploadedFiles.length > 0) {
+            return true;
+        }
+
+        // Проверяем наличие обработанных данных
+        if (this.transformedData && this.transformedData.length > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
     init() {
         this.setupUploadArea();
         document.getElementById('transformBtn').addEventListener('click', () => this.transformFile());
         document.getElementById('validateBtn').addEventListener('click', () => this.validateAndSave());
+        this.setupPageLeaveWarning(); // Защита от случайного обновления страницы
 
         const branchRadios = document.querySelectorAll('input[name="branchTarget"]');
     }
@@ -342,7 +377,12 @@ class Stage1 {
                             q = parseFloat(q.replace(',', '.'));
                         }
                     }
-                    if (!q || Number.isNaN(q)) q = 0;
+                    // Правильно проверяем на NaN и null, но сохраняем дробные числа (включая 0.5, 0.1 и т.д.)
+                    if (Number.isNaN(q) || q === null || q === undefined) {
+                        q = 0;
+                    } else {
+                        q = parseFloat(q); // Убеждаемся что это число (supports floats like 2.5)
+                    }
                     invoiceData[item.sku] = q; // sku -> qtn (по накладной)
                     invoiceNames[item.sku] = this.transformedData.find(t => t.sku === item.sku)?.name || item.sku; // Название из таблицы
                 });
@@ -357,7 +397,12 @@ class Stage1 {
                             if (typeof dv === 'string') {
                                 dv = dv.toLowerCase && dv.toLowerCase() === 'нету' ? 0 : parseFloat(dv.replace(',', '.'));
                             }
-                            if (!dv || Number.isNaN(dv)) dv = 0;
+                            // Правильно проверяем на NaN и null, сохраняя дробные числа
+                            if (Number.isNaN(dv) || dv === null || dv === undefined) {
+                                dv = 0;
+                            } else {
+                                dv = parseFloat(dv); // Убеждаемся что это число (supports floats like 2.5)
+                            }
                             invoiceDeliveredData[t.sku] = dv;
                         }
                     });
@@ -389,7 +434,10 @@ class Stage1 {
                 const nextUrl = branchTarget === 'radix' ? '/radix' : '/stage2';
                 const nextLabel = branchTarget === 'radix' ? 'По отдельности' : 'Разом';
                 next.innerHTML = `<span class="btn-icon">➜</span>${nextLabel}`;
-                next.addEventListener('click', () => window.location.href = nextUrl);
+                next.addEventListener('click', () => {
+                    this.isNavigatingAway = true; // Отключаем warning при переходе
+                    window.location.href = nextUrl;
+                });
                 btn.parentElement.appendChild(next);
             } else {
                 alert('❌ Ошибка: ' + (r.error || 'неизвестная'));

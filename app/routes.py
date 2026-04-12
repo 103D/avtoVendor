@@ -342,12 +342,16 @@ def save_stage1_data():
                     qtn = 0.0
             else:
                 # Преобразуем в float, чтобы сохранить дробные части
-                qtn = float(qtn) if qtn else 0.0
+                # НЕ используем int() или ceil() - это потеряет дробные части!
+                if qtn is None:
+                    qtn = 0.0
+                else:
+                    qtn = float(qtn)
             
             # Создаем payload без productId (он будет добавлен на stage2 из /api/get-menu-items)
             payloads.append({
                 "sku": row.get('sku'),
-                "qtn": qtn  # Теперь может быть дробное число (2.5, 3.75 и т.д.)
+                "qtn": qtn  # Сохраняем дробные числа без округления (2.5, 3.75 и т.д.)
             })
         
         session_manager.save_json('payloads.json', {'payloads': payloads}, 'temp')

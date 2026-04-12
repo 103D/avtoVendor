@@ -14,6 +14,41 @@ class Stage2Manager {
         return id;
     }
 
+    setupPageLeaveWarning() {
+        window.addEventListener('beforeunload', (event) => {
+            if (this.hasUnsavedData()) {
+                event.preventDefault();
+                event.returnValue = 'У вас есть несохраненные данные! Все изменения будут потеряны при обновлении страницы.';
+                return event.returnValue;
+            }
+        });
+    }
+
+    hasUnsavedData() {
+        // Проверяем наличие добавленных вручную товаров
+        if (this.newProducts && this.newProducts.length > 0) {
+            return true;
+        }
+
+        // Проверяем наличие изменений в таблице
+        if (this.currentRows && this.currentRows.length > 0) {
+            for (let i = 0; i < this.currentRows.length; i++) {
+                const input = document.getElementById(`qty_${i}`);
+                if (input) {
+                    const currentValue = input.value.trim();
+                    const originalValue = input.dataset.originalQty;
+                    
+                    // Если значение отличается от исходного — есть изменения
+                    if (currentValue !== originalValue) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
     init() {
         this.loadSavedConfig();
         this.loadInvoiceData(); // Загружаем данные накладной из Stage 1
@@ -24,6 +59,7 @@ class Stage2Manager {
         this.sentTotals = {}; // { "sku|doc": totalSent }
         this.loadJWTToken(); // Загружаем JWT токен из localStorage
         this.loadSavedUsername(); // Загружаем сохраненный логин и заполняем поле
+        this.setupPageLeaveWarning(); // Защита от случайного обновления страницы
         this.log('✅ Stage 2 готов', 'info');
     }
 
@@ -675,12 +711,14 @@ class Stage2Manager {
                 // Сохраняем payloads для использования в returnQuantities
                 this.lastPayloads = payloads;
 
-                // Показываем кнопки для перехода к комментариям и возврата товаров
-                let btnGroup = document.querySelector('#resultsTable .button-group');
-                if (!btnGroup) {
-                    const sendBtn = document.getElementById('btnSendQty');
-                    if (sendBtn) btnGroup = sendBtn.closest('.button-group');
+                // Удаляем кнопку "Отправить все" чтобы не было двойного клика
+                const sendBtn = document.getElementById('btnSendQty');
+                if (sendBtn) {
+                    sendBtn.remove();
                 }
+
+                // Показываем кнопку для возврата товаров
+                let btnGroup = document.querySelector('#resultsTable .button-group');
                 if (!btnGroup) {
                     const results = document.getElementById('resultsTable');
                     if (results && results.nextElementSibling && results.nextElementSibling.classList.contains('button-group')) {
@@ -688,16 +726,6 @@ class Stage2Manager {
                     }
                 }
                 if (btnGroup) {
-                    let btnComments = document.getElementById('btnComments');
-                    if (!btnComments) {
-                        btnComments = document.createElement('button');
-                        btnComments.id = 'btnComments';
-                        btnComments.textContent = '📝 Перейти к комментариям';
-                        btnComments.style.marginLeft = '10px';
-                        btnComments.onclick = () => { this.notifyTelegram('comments'); this.generateComments(); };
-                        btnGroup.appendChild(btnComments);
-                    }
-
                     let btnReturn = document.getElementById('btnReturnQty');
                     if (!btnReturn) {
                         btnReturn = document.createElement('button');
@@ -718,7 +746,11 @@ class Stage2Manager {
             this.showStatus('', 'error');
         })
         .finally(() => {
-            document.getElementById('btnSendQty').disabled = false;
+            // Кнопка может быть уже удалена, поэтому проверяем перед disable
+            const sendBtn = document.getElementById('btnSendQty');
+            if (sendBtn) {
+                sendBtn.disabled = false;
+            }
         });
     }
 

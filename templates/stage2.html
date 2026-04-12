@@ -185,11 +185,74 @@
       }
 
       input[type="number"] {
-          width: 100px;
+          width: 60px;
           padding: 8px;
           border: 1px solid var(--border-color);
           border-radius: 4px;
           font-size: 14px;
+          text-align: center;
+      }
+
+      .qty-controls {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+      }
+
+      .qty-btn {
+          width: 36px;
+          height: 36px;
+          padding: 0;
+          border: 2px solid;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+          margin-bottom: 0;
+      }
+
+      .qty-btn-minus {
+          background: #e74c3c;
+          color: white;
+          border-color: #c0392b;
+      }
+
+      .qty-btn-minus:hover {
+          background: #c0392b;
+          border-color: #a93226;
+          transform: scale(1.05);
+      }
+
+      .qty-btn-plus {
+          background: #2ecc71;
+          color: white;
+          border-color: #27ae60;
+      }
+
+      .qty-btn-plus:hover {
+          background: #27ae60;
+          border-color: #229954;
+          transform: scale(1.05);
+      }
+
+      .qty-btn:active {
+          transform: scale(0.95);
+      }
+
+      .qty-btn:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+      }
+
+      @media (max-width: 768px) {
+          table th:nth-child(4),
+          table td:nth-child(4) {
+              display: none;
+          }
       }
 
       input[type="text"],
