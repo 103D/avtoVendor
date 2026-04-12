@@ -94,9 +94,10 @@ class Stage1 {
                 localStorage.removeItem('accountLogin');
                 localStorage.setItem('accountLogin', username);
                 console.log('✅ Логин сохранён в localStorage:', username);
-                // Скрываем форму логина, показываем загрузку файла
+                // Скрываем форму логина, показываем загрузку файла и инвентаризацию
                 document.getElementById('login-section').style.display = 'none';
                 document.getElementById('upload-section').style.display = 'block';
+                document.getElementById('inventory-section').style.display = 'block';
                 loginStatus.innerHTML = '<div style="background: #d4edda; color: #155724; padding: 10px; border-radius: 4px; font-size: 14px;">✅ Вход успешен!</div>';
             } else {
                 console.log('❌ Ошибка аутентификации (Stage1):', d.error);
@@ -162,6 +163,16 @@ class Stage1 {
         const fileList = this.uploadedFiles.map((f, i) => `${i + 1}. ${f}`).join('<br>');
         this.showStatus('uploadStatus', `✓ Выбрано ${this.uploadedFiles.length} файлов:<br>${fileList}`, 'success');
         document.getElementById('transform-section').style.display = 'block';
+        // Скрываем режим инвентаризации если загружены файлы
+        const inventorySection = document.getElementById('inventory-section');
+        if (inventorySection) {
+            inventorySection.style.display = 'none';
+        }
+        // Сбрасываем чекбокс
+        const inventoryCheckbox = document.getElementById('inventoryModeCheckbox');
+        if (inventoryCheckbox) {
+            inventoryCheckbox.checked = false;
+        }
     }
 
     handleFile(file) {
@@ -458,6 +469,17 @@ class Stage1 {
     esc(text) {
         const m = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
         return text.replace(/[&<>"']/g, c => m[c]);
+    }
+
+    toggleInventoryMode() {
+        const checkbox = document.getElementById('inventoryModeCheckbox');
+        if (checkbox && checkbox.checked) {
+            // Сохраняем флаг инвентаризации
+            localStorage.setItem('inventoryMode', '1');
+            
+            this.isNavigatingAway = true;
+            window.location.href = '/invent';
+        }
     }
 }
 

@@ -27,6 +27,10 @@ def stage2():
 def radix():
     return render_template('radix.html')
 
+@main_bp.route('/invent')
+def invent():
+    return render_template('invent.html')
+
 @main_bp.route('/login')
 def login():
     return render_template('login.html')
@@ -706,52 +710,63 @@ def get_menu_items():
 
 @api_bp.route('/search-products', methods=['POST'])
 def search_products():
-    """Поиск товаров по названию/SKU для добавления новых товаров"""
+    """Поиск товаров для инвентаризации из API"""
     try:
         data = request.get_json()
-        search_query = data.get('search_query', '').strip().lower()
+        jwt_token = data.get('jwt_token', '').strip()
+        search_query = data.get('query', '').strip().lower()
         
-        if not search_query or len(search_query) < 2:
-            return jsonify({'success': True, 'products': []}), 200
+        if not jwt_token:
+            return jsonify({'success': False, 'error': 'JWT токен не предоставлен'}), 400
         
-        print(f"🔍 Поиск товаров: '{search_query}'")
+        print(f"🔍 Инвент-поиск товаров: '{search_query}'")
         
-        # Читаем data.json
-        data_json_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data.json')
-        
-        if not os.path.exists(data_json_path):
-            return jsonify({'success': False, 'error': 'Файл data.json не найден'}), 404
-        
+        # GET запрос к API для получения всех товаров
+        url = "https://orderconfirmer-api.safiadelivery.com/api/menu/Menus"
         try:
-            with open(data_json_path, 'r', encoding='utf-8') as f:
-                menu_data = json.load(f)
+            response = requests.get(
+                url,
+                headers={"Authorization": f"Bearer {jwt_token}"},
+                timeout=10
+            )
+            
+            if response.status_code != 200:
+                return jsonify({'success': False, 'error': f'API вернул статус {response.status_code}'}), 400
+            
+            api_data = response.json()
+        except requests.exceptions.Timeout:
+            return jsonify({'success': False, 'error': 'Timeout при запросе к API'}), 408
         except Exception as e:
-            return jsonify({'success': False, 'error': f'Ошибка чтения data.json: {str(e)}'}), 500
+            return jsonify({'success': False, 'error': f'Ошибка запроса: {str(e)}'}), 500
         
-        # Фильтруем товары по поисковому запросу
-        filtered_products = []
+        # Собираем все товары из API
+        all_products = []
+        if "data" in api_data:
+            for category in api_data["data"]:
+                if "products" in category:
+                    for product in category["products"]:
+                        all_products.append({
+                            'id': product.get('id', ''),
+                            'productId': product.get('productId', product.get('id', '')),
+                            'sku': product.get('sku', ''),
+                            'nameRu': product.get('nameRu', ''),
+                            'qtn': float(product.get('qtn', 0))
+                        })
         
-        # Проходим по категориям и их товарам
-        if isinstance(menu_data, dict) and 'data' in menu_data:
-            for category in menu_data['data']:
-                if isinstance(category, dict) and 'products' in category:
-                    for product in category['products']:
-                        if isinstance(product, dict):
-                            sku = str(product.get('sku', '')).lower()
-                            nameRu = str(product.get('nameRu', '')).lower()
-                            
-                            # Ищем совпадение по SKU или названию
-                            if search_query in sku or search_query in nameRu:
-                                filtered_products.append({
-                                    'sku': product.get('sku', ''),
-                                    'name': product.get('nameRu', '')
-                                })
+        # Фильтруем по поисковому запросу если он есть
+        if search_query:
+            filtered_products = [
+                p for p in all_products 
+                if search_query in str(p['sku']).lower() or search_query in str(p['nameRu']).lower()
+            ]
+        else:
+            filtered_products = all_products
         
-        print(f"   ✅ Найдено {len(filtered_products)} товаров")
+        print(f"   ✅ Загружено {len(all_products)} товаров, найдено совпадений: {len(filtered_products)}")
         
         return jsonify({
             'success': True,
-            'products': filtered_products[:20]  # Ограничиваем до 20 результатов
+            'products': filtered_products[:100]  # Ограничиваем до 100 результатов
         }), 200
     
     except Exception as e:
@@ -785,11 +800,12 @@ def update_quantities():
         print("="*60 + "\n")
         
         # Трансформируем payloads в формат ожидаемый API Safia:
-        # Frontend отправляет: {"sku": "...", "qtn": 5.0, "productId": "550e8400..."}
+        # Frontend отправляет: {"sku": "...", "qtn": 5.0, "product-id": "550e8400..."} или {"sku": "...", "qtn": 5.0, "productId": "550e8400..."}
         # API ожидает: {"productId": "550e8400...", "sku": "...", "qtn": 5.0}
         formatted_payloads = []
         for payload in payloads:
-            product_id = payload.get('productId') or payload.get('id', '')
+            # Пытаемся получить product-id (с дефисом) или productId (camelCase)
+            product_id = payload.get('product-id') or payload.get('productId') or payload.get('id', '')
             
             # Валидация: productId обязателен
             if not product_id:

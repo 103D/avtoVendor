@@ -95,6 +95,22 @@
           <div id="uploadStatus" class="upload-status" style="display: none"></div>
         </section>
 
+        <!-- Режим инвентаризации (между загрузкой и обработкой) -->
+        <section class="stage-section" id="inventory-section" style="display: none; background: #fff8dc; padding: 20px; border-radius: 8px; border: 2px dashed var(--primary-color)">
+          <label style="display: flex; align-items: center; cursor: pointer; font-size: 16px; font-weight: 500">
+            <input
+              type="checkbox"
+              id="inventoryModeCheckbox"
+              style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer"
+              onchange="stage1.toggleInventoryMode()"
+            />
+            <span>📦 Режим Инвентаризации</span>
+          </label>
+          <p style="margin: 10px 0 0 32px; font-size: 13px; color: #666; line-height: 1.5">
+            Добавляйте товары вручную без загрузки файла. Идеально, когда накладной нет или она придёт позже.
+          </p>
+        </section>
+
         <!-- Обработка файла -->
         <section class="stage-section" id="transform-section" style="display: none">
           <div
